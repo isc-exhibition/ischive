@@ -9,7 +9,7 @@ export default function Footer() {
         {/* line 1 */}
         <div className="flex flex-row items-center py-3">
           <Image src={SNULogo} alt="SNULogo" />
-          <p className="text-white">
+          <p className="text-white ">
             서울대학교 연합전공 정보문화학 과제 아카이빙 웹사이트
           </p>
         </div>
