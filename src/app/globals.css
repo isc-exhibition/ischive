@@ -2,26 +2,54 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-/* @media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+/* Font settings */
+@layer base {
+  /* Pretendard */
+  @font-face {
+    font-family: "Pretendard";
+    src: url("../assets/font/Pretendard-Thin.woff") format("woff");
+    font-weight: 100;
   }
-} */
+  @font-face {
+    font-family: "Pretendard";
+    src: url("../assets/font/Pretendard-Light.woff") format("woff");
+    font-weight: 300;
+  }
+  @font-face {
+    font-family: "Pretendard";
+    src: url("../assets/font/Pretendard-Bold.woff") format("woff");
+    font-weight: 700;
+  }
+  @font-face {
+    font-family: "Pretendard";
+    src: url("../assets/font/Pretendard-ExtraBold.woff") format("woff");
+    font-weight: 800;
+  }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  /* WideNerd */
+  @font-face {
+    font-family: "MonoplexWideNerd";
+    src: url("../assets/font/MonoplexKRWideNerd-Regular.ttf") format("ttf");
+    font-weight: 400;
+  }
+  @font-face {
+    font-family: "MonoplexWideNerd";
+    src: url("../assets/font/MonoplexKRWideNerd-Bold.ttf") format("ttf");
+    font-weight: 700;
+  }
+
+  /* header -> div : MonplexWideNerd, regular */
+  header div {
+    @apply font-MonoplexWideNerd font-normal;
+  }
+
+  /* h1: MonoplexWideNerd, bold */
+  h1 {
+    @apply font-MonoplexWideNerd font-bold;
+  }
+
+  /* footer -> p : Pretendard, light */
+  footer p {
+    @apply font-Pretendard font-light;
+  }
 }
