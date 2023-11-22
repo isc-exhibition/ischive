@@ -4,6 +4,7 @@ import EmailLogo from "../../../assets/img/email_small.png";
 
 export default function Footer() {
   return (
+    /* footer fixed at the bottom of the page */
     <footer className="mt-auto flex flex-col bg-black pl-5">
       <div className="items-center">
         {/* line 1 */}
