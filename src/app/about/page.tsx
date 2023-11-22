@@ -1,3 +1,8 @@
+/* 
+about/page.tsx:
+  Describes /about
+*/
+
 import Image from "next/image";
 import Layout from "@/components/Layout/Layout";
 
