@@ -1,3 +1,9 @@
+/* 
+globals.css:
+  Describes styles applied globally
+  Use '@layer base' to add default base styles for specific HTML elements
+*/
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

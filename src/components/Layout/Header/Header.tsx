@@ -1,3 +1,9 @@
+/* 
+Header.tsx:
+    Describes a header that will be fixed on the top of every page
+    One of the children of Layout
+*/
+
 import Image from "next/image";
 import Link from "next/link";
 import ISCLogo from "../../../assets/img/logo_archiving.gif";

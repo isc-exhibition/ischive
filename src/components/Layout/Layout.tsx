@@ -1,3 +1,8 @@
+/* 
+Layout.tsx:
+  Defines a layout of all pages
+*/
+
 import Footer from "./Footer/Footer";
 import Header from "./Header/Header";
 

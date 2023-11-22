@@ -1,3 +1,9 @@
+/* 
+Header.tsx:
+    Describes a footer that will be on the bottom of every page
+    One of the children of Layout
+*/
+
 import Image from "next/image";
 import SNULogo from "../../../assets/img/snu_ui_small.png";
 import EmailLogo from "../../../assets/img/email_small.png";
