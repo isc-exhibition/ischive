@@ -62,12 +62,12 @@
 
   /* header -> div : MonplexWideNerd, light */
   header div {
-    @apply font-MonoplexWideNerd font-light;
+    @apply font-MonoplexWideNerd font-normal;
   }
 
   /* h1: MonoplexWideNerd, bold */
   h1 {
-    @apply font-MonoplexWideNerd font-bold;
+    @apply font-MonoplexWideNerd ml-2 text-6xl font-bold md:text-7xl;
   }
 
   /* footer -> p : Pretendard, light */

@@ -14,15 +14,15 @@ export default function Header() {
         {/* Texts */}
         <div className="flex flex-row">
           {/* HOME */}
-          <div className="text-xl">
+          <div className="text-xl sm:text-2xl">
             <Link href="/">HOME</Link>
           </div>
           {/* ABOUT */}
-          <div className="pl-3 text-xl">
+          <div className="pl-2 text-xl sm:pl-4 sm:text-2xl">
             <Link href="/about">ABOUT</Link>
           </div>
           {/* ARCHIVING */}
-          <div className="px-3 text-xl">
+          <div className="px-2 text-xl sm:px-4 sm:text-2xl">
             <Link href="/archiving">ARCHIVING</Link>
           </div>
         </div>
