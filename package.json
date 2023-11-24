@@ -5,11 +5,12 @@
   "homepage": "www.ischive.com",
   "scripts": {
     "dev": "next dev",
-    "build": "next build && next export",
+    "build": "next build ",
     "predeploy": "npm run build",
-    "deploy": "next build && next export && touch out/.nojekyll && git add -f out/ && git commit -m 'deploy to gh-pages' && git subtree push --prefix out origin gh-pages",
+    "deploy": "next build && git add out/ && git commit -m \"Deploy Next.js to gh-pages\" && git subtree push --prefix out origin gh-pages",
     "start": "next start",
     "lint": "next lint"
+
   },
   "dependencies": {
     "next": "14.0.3",
