@@ -1,9 +1,16 @@
+/* 
+Header.tsx:
+    Describes a footer that will be on the bottom of every page
+    One of the children of Layout
+*/
+
 import Image from "next/image";
 import SNULogo from "../../../assets/img/snu_ui_small.png";
 import EmailLogo from "../../../assets/img/email_small.png";
 
 export default function Footer() {
   return (
+    /* footer fixed at the bottom of the page */
     <footer className="mt-auto flex flex-col bg-black pl-5">
       <div className="items-center">
         {/* line 1 */}

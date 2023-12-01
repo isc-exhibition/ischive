@@ -1,14 +1,54 @@
+/* 
+Header.tsx:
+    Describes a header that will be fixed on the top of every page
+    One of the children of Layout
+*/
+
+"use client";
+
 import Image from "next/image";
+import Link from "next/link";
 import ISCLogo from "../../../assets/img/logo_archiving.gif";
+import { usePathname } from "next/navigation";
 
 export default function Header() {
+  const pathName = usePathname();
+
   return (
-    <header className="relative flex h-[60px] flex-row items-center justify-between">
-      <Image src={ISCLogo} alt="isc-logo" width={130} />
-      <div className="flex flex-row">
-        <div>HOME</div>
-        <div className="pl-3">ABOUT</div>
-        <div className="px-3">ARCHIVING</div>
+    /* header fixed at the top while scrolling */
+    <header className="fixed z-50 h-[60px] w-full border-b-2 border-solid border-black bg-white">
+      <div className="flex items-center justify-between">
+        {/* Logo -> nav to home */}
+        <Link href="/">
+          <Image src={ISCLogo} alt="isc-logo" width={130} />
+        </Link>
+        {/* Texts */}
+        <div className="flex flex-row">
+          {/* HOME */}
+          <div
+            className={`text-xl sm:text-2xl ${
+              pathName == "/" ? "text-[#FF5C00]" : ""
+            }`}
+          >
+            <Link href="/">HOME</Link>
+          </div>
+          {/* ABOUT */}
+          <div
+            className={`pl-2 text-xl sm:pl-4 sm:text-2xl ${
+              pathName == "/about" ? "text-[#FF5C00]" : ""
+            }`}
+          >
+            <Link href="/about">ABOUT</Link>
+          </div>
+          {/* ARCHIVING */}
+          <div
+            className={`px-2 text-xl sm:px-4 sm:text-2xl ${
+              pathName == "/archiving" ? "text-[#FF5C00]" : ""
+            }`}
+          >
+            <Link href="/archiving">ARCHIVING</Link>
+          </div>
+        </div>
       </div>
     </header>
   );

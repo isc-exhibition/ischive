@@ -1,3 +1,9 @@
+/* 
+globals.css:
+  Describes styles applied globally
+  Use '@layer base' to add default base styles for specific HTML elements
+*/
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -29,23 +35,45 @@
   /* WideNerd */
   @font-face {
     font-family: "MonoplexWideNerd";
-    src: url("../assets/font/MonoplexKRWideNerd-Regular.ttf") format("ttf");
+    src: url("../assets/font/MonoplexKRWideNerd-ExtraLight.ttf")
+      format("truetype");
+    font-weight: 200;
+  }
+  @font-face {
+    font-family: "MonoplexWideNerd";
+    src: url("../assets/font/MonoplexKRWideNerd-Light.ttf") format("truetype");
+    font-weight: 300;
+  }
+  @font-face {
+    font-family: "MonoplexWideNerd";
+    src: url("../assets/font/MonoplexKRWideNerd-Regular.ttf") format("truetype");
     font-weight: 400;
   }
   @font-face {
     font-family: "MonoplexWideNerd";
-    src: url("../assets/font/MonoplexKRWideNerd-Bold.ttf") format("ttf");
+    src: url("../assets/font/MonoplexKRWideNerd-Medium.ttf") format("truetype");
+    font-weight: 500;
+  }
+  @font-face {
+    font-family: "MonoplexWideNerd";
+    src: url("../assets/font/MonoplexKRWideNerd-SemiBold.ttf")
+      format("truetype");
+    font-weight: 600;
+  }
+  @font-face {
+    font-family: "MonoplexWideNerd";
+    src: url("../assets/font/MonoplexKRWideNerd-Bold.ttf") format("truetype");
     font-weight: 700;
   }
 
-  /* header -> div : MonplexWideNerd, regular */
+  /* header -> div : MonplexWideNerd, light */
   header div {
     @apply font-MonoplexWideNerd font-normal;
   }
 
   /* h1: MonoplexWideNerd, bold */
   h1 {
-    @apply font-MonoplexWideNerd font-bold;
+    @apply font-MonoplexWideNerd ml-2 text-6xl font-bold md:text-7xl;
   }
 
   /* footer -> p : Pretendard, light */
