@@ -105,7 +105,7 @@ export default function About() {
       <h1>GREETINGS</h1>
       {/* div: container for greetings message */}
       <div className="border-b-2 border-t-2 border-solid border-black py-9">
-        <div className="px-12 text-lg">
+        <div className="px-10 text-lg">
           <p>
             누군가로 하여금 일하게 만드는 동력은 여러 종류가 있겠지만, 우리
             정보문화학 구성원들에게 가장 큰 원동력은{" "}
@@ -150,17 +150,19 @@ export default function About() {
         <h2>기획팀</h2>
       </div>
       {/* div: profiles */}
-      <div className="flex flex-row flex-wrap border-t-2 border-solid border-black">
-        {pms.map((item) => (
-          <ProfileContainer
-            team={item.team}
-            isHead={item.isHead}
-            major={item.major}
-            name={item.name}
-            account={item.account}
-            key={item.id}
-          />
-        ))}
+      <div className="border-t-2 border-solid border-black">
+        <div className="mx-5 flex flex-row flex-wrap">
+          {pms.map((item) => (
+            <ProfileContainer
+              team={item.team}
+              isHead={item.isHead}
+              major={item.major}
+              name={item.name}
+              account={item.account}
+              key={item.id}
+            />
+          ))}
+        </div>
       </div>
     </Layout>
   );

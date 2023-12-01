@@ -16,11 +16,11 @@ function ProfileContainer({
   key: number;
 }) {
   return (
-    <div>
+    <div className="mt-6">
       <Image
         src={require(`../../assets/img/profile/${team}_${name}.png`)}
         alt={`${team}-${key}`}
-        className="w-52"
+        className="mx-5 w-40"
       />
       <div className="my-2 text-center font-bold">{`${team}${
         isHead ? " 팀장" : ""
