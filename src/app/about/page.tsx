@@ -5,21 +5,23 @@ about/page.tsx:
 
 import Image from "next/image";
 import Layout from "@/components/Layout/Layout";
+import HomeLogo from "../../assets/img/home.png";
+import IgLogo from "../../assets/img/instagram.png";
 
 export default function About() {
   return (
     <Layout>
-      <div>
-        <div>
-          <h1> GREETINGS </h1>
-        </div>
-        <div>
+      {/* h1: GREETINGS */}
+      <h1>GREETINGS</h1>
+      {/* div: container for greetings message */}
+      <div className="border-b-2 border-t-2 border-solid border-black py-9">
+        <div className="px-12 text-lg">
           <p>
             누군가로 하여금 일하게 만드는 동력은 여러 종류가 있겠지만, 우리
-            정보문화학 구성원들에게 가장 큰 원동력은
+            정보문화학 구성원들에게 가장 큰 원동력은{" "}
             <strong>새로운 시도를 통한 문제 해결</strong>이 아닐까 합니다.
           </p>
-          <p>&nbsp;</p>;
+          <p>&nbsp;</p>
           <p>
             2002년 기초학문과 이론을 중시하던 서울대학교에 IT 실무와 융합교육을
             제공할 수 있는 연합전공으로서 정보문화학이 탄생했습니다. 꼭 10년이
@@ -46,6 +48,25 @@ export default function About() {
             <strong>연합전공 정보문화학 온라인 과제 아카이빙 사이트 TF</strong>
           </p>
         </div>
+        <div className="flex flex-row justify-end">
+          <Image src={HomeLogo} alt="home-logo" className="mr-12 w-10" />
+          <Image src={IgLogo} alt="ig-logo" className="mr-14 w-10" />
+        </div>
+      </div>
+      {/* h1: CREDITS */}
+      <h1 className="text-right">CREDITS</h1>
+      {/* div & h2: 기획팀 */}
+      <div className="border-t-2 border-solid border-black">
+        <h2>기획팀</h2>
+      </div>
+      {/* div: profiles */}
+      <div className="flex flex-row flex-wrap border-t-2 border-solid border-black">
+        <Image
+          src="../../assets/img/profile/기획팀_이예은.png"
+          alt="기획팀-1"
+          width={300}
+          height={300}
+        ></Image>
       </div>
     </Layout>
   );
