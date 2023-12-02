@@ -73,7 +73,12 @@ globals.css:
 
   /* h1: MonoplexWideNerd, bold */
   h1 {
-    @apply font-MonoplexWideNerd ml-2 text-6xl font-bold md:text-7xl;
+    @apply mx-4 font-MonoplexWideNerd text-6xl font-bold md:text-7xl;
+  }
+
+  /* h2: Pretendard, extrabold */
+  h2 {
+    @apply mx-4 font-Pretendard text-2xl font-extrabold md:my-1 md:text-3xl;
   }
 
   /* footer -> p : Pretendard, light */
