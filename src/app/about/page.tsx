@@ -159,7 +159,7 @@ export default function About() {
       <h1 className="text-right">CREDITS</h1>
       {/* div & h2: 기획팀 */}
       <div className="border-t-2 border-solid border-black">
-        <h2>기획팀</h2>
+        <h2 className="mx-4">기획팀</h2>
       </div>
       {/* div: profiles */}
       <div className="border-t-2 border-solid border-black">
@@ -179,7 +179,7 @@ export default function About() {
       </div>
       {/* div & h2: 디자인팀 */}
       <div className="border-t-2 border-solid border-black text-right">
-        <h2>디자인팀</h2>
+        <h2 className="mx-4">디자인팀</h2>
       </div>
       {/* div: profiles */}
       <div className="border-t-2 border-solid border-black">
@@ -199,7 +199,7 @@ export default function About() {
       </div>
       {/* div & h2: 개발팀 */}
       <div className="text border-t-2 border-solid border-black">
-        <h2>개발팀</h2>
+        <h2 className="mx-4">개발팀</h2>
       </div>
       {/* div: profiles */}
       <div className="border-t-2 border-solid border-black">
