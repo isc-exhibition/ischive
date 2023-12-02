@@ -12,7 +12,6 @@ import { usePathname } from "next/navigation";
 
 export default function Header() {
   const pathname = usePathname();
-  console.log(pathname);
 
   return (
     /* header fixed at the top while scrolling */
@@ -34,7 +33,7 @@ export default function Header() {
           {/* HOME */}
           <div
             className={`text-xl sm:text-2xl ${
-              pathname == "/" ? "text-[#FF5C00]" : ""
+              pathname === "/" || pathname === "" ? "text-[#FF5C00]" : ""
             }`}
           >
             <Link href="/">HOME</Link>
@@ -42,7 +41,9 @@ export default function Header() {
           {/* ABOUT */}
           <div
             className={`pl-2 text-xl sm:pl-4 sm:text-2xl ${
-              pathname == "/about" ? "text-[#FF5C00]" : ""
+              pathname === "/about" || pathname === "/about/"
+                ? "text-[#FF5C00]"
+                : ""
             }`}
           >
             <Link href="/about">ABOUT</Link>
@@ -50,7 +51,9 @@ export default function Header() {
           {/* ARCHIVING */}
           <div
             className={`px-2 text-xl sm:px-4 sm:text-2xl ${
-              pathname == "/archiving" ? "text-[#FF5C00]" : ""
+              pathname === "/archiving" || pathname === "/archiving/"
+                ? "text-[#FF5C00]"
+                : ""
             }`}
           >
             <Link href="/archiving">ARCHIVING</Link>
