@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-function ProfileContainer({
+export default function ProfileContainer({
   team,
   isHead,
   major,
@@ -16,7 +16,7 @@ function ProfileContainer({
   key: number;
 }) {
   return (
-    <div className="mt-6">
+    <div className="my-6">
       <Image
         src={require(`../../assets/img/profile/${team}_${name}.png`)}
         alt={`${team}-${key}`}
@@ -30,5 +30,3 @@ function ProfileContainer({
     </div>
   );
 }
-
-export default ProfileContainer;

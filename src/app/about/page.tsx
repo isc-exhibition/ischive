@@ -40,11 +40,11 @@ export default function About() {
   const designers = [
     {
       team: "디자인팀",
-      isHead: true,
-      major: "사회학과",
-      name: "배정은",
-      account: "bje0305@snu.ac.kr",
-      id: 3,
+      isHead: false,
+      major: "미학과",
+      name: "박수빈",
+      account: "@xu8inx",
+      id: 5,
     },
     {
       team: "디자인팀",
@@ -56,11 +56,11 @@ export default function About() {
     },
     {
       team: "디자인팀",
-      isHead: false,
-      major: "미학과",
-      name: "박수빈",
-      account: "@xu8inx",
-      id: 5,
+      isHead: true,
+      major: "사회학과",
+      name: "배정은",
+      account: "bje0305@snu.ac.kr",
+      id: 3,
     },
   ];
 
@@ -153,6 +153,44 @@ export default function About() {
       <div className="border-t-2 border-solid border-black">
         <div className="mx-5 flex flex-row flex-wrap">
           {pms.map((item) => (
+            <ProfileContainer
+              team={item.team}
+              isHead={item.isHead}
+              major={item.major}
+              name={item.name}
+              account={item.account}
+              key={item.id}
+            />
+          ))}
+        </div>
+      </div>
+      {/* div & h2: 디자인팀 */}
+      <div className="border-t-2 border-solid border-black text-right">
+        <h2>디자인팀</h2>
+      </div>
+      {/* div: profiles */}
+      <div className="border-t-2 border-solid border-black">
+        <div className="mx-5 flex flex-row-reverse flex-wrap">
+          {designers.map((item) => (
+            <ProfileContainer
+              team={item.team}
+              isHead={item.isHead}
+              major={item.major}
+              name={item.name}
+              account={item.account}
+              key={item.id}
+            />
+          ))}
+        </div>
+      </div>
+      {/* div & h2: 개발팀 */}
+      <div className="text border-t-2 border-solid border-black">
+        <h2>개발팀</h2>
+      </div>
+      {/* div: profiles */}
+      <div className="border-t-2 border-solid border-black">
+        <div className="mx-5 flex flex-row flex-wrap">
+          {developers.map((item) => (
             <ProfileContainer
               team={item.team}
               isHead={item.isHead}
