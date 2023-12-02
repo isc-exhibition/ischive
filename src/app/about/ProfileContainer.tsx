@@ -7,7 +7,6 @@ export default function ProfileContainer({
   name,
   account,
   id,
-  key,
 }: {
   team: string;
   isHead: boolean;
@@ -15,7 +14,6 @@ export default function ProfileContainer({
   name: string;
   account: string;
   id: number;
-  key: number;
 }) {
   return (
     <div className="my-6">
