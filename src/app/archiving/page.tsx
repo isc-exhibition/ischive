@@ -11,7 +11,7 @@ export default async function Page() {
   return (
     <Layout>
       {/* h1: ROADMAP */}
-      <h1>ROADMAP</h1>
+      <h1>R0ADMAP</h1>
       {/* SemesterSelect: dropdown select box */}
       <div className="border-t-2 border-solid border-black">
         <SemesterSelect></SemesterSelect>
