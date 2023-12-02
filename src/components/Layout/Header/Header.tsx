@@ -8,7 +8,6 @@ Header.tsx:
 
 import Image from "next/image";
 import Link from "next/link";
-import ISCLogo from "../../../assets/img/logo_archiving.gif";
 import { usePathname } from "next/navigation";
 
 export default function Header() {
@@ -20,7 +19,13 @@ export default function Header() {
       <div className="flex items-center justify-between">
         {/* Logo -> nav to home */}
         <Link href="/">
-          <Image src={ISCLogo} alt="isc-logo" width={130} />
+          <Image
+            src="/assets/img/logo_archiving.gif"
+            alt="isc-logo"
+            width={130}
+            height={0}
+            style={{ height: "auto" }}
+          />
         </Link>
         {/* Texts */}
         <div className="flex flex-row">

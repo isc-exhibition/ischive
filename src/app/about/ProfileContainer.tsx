@@ -6,6 +6,7 @@ export default function ProfileContainer({
   major,
   name,
   account,
+  id,
   key,
 }: {
   team: string;
@@ -13,15 +14,19 @@ export default function ProfileContainer({
   major: string;
   name: string;
   account: string;
+  id: number;
   key: number;
 }) {
   return (
     <div className="my-6">
-      <Image
-        src={require(`../../assets/img/profile/${team}_${name}.png`)}
-        alt={`${team}-${key}`}
-        className="mx-5 w-40"
-      />
+      <div className="mx-5 w-40">
+        <Image
+          src={`/assets/img/profile/${team}_${name}.png`}
+          alt={`${team}-${id}`}
+          width={10000}
+          height={10000}
+        />
+      </div>
       <div className="my-2 text-center font-bold">{`${team}${
         isHead ? " 팀장" : ""
       }`}</div>

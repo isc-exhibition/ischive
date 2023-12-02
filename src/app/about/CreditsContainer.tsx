@@ -6,6 +6,7 @@ interface MembersProps {
   major: string;
   name: string;
   account: string;
+  id: number;
   key: number;
 }
 
@@ -29,7 +30,8 @@ export default function CreditsContainer({
           major={item.major}
           name={item.name}
           account={item.account}
-          key={item.key}
+          id={item.id}
+          key={item.id}
         />
       ))}
     </div>
