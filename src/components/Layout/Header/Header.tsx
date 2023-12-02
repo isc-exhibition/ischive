@@ -11,7 +11,8 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 export default function Header() {
-  const pathName = usePathname();
+  const pathname = usePathname();
+  console.log(pathname);
 
   return (
     /* header fixed at the top while scrolling */
@@ -19,20 +20,21 @@ export default function Header() {
       <div className="flex items-center justify-between">
         {/* Logo -> nav to home */}
         <Link href="/">
-          <Image
-            src="/assets/img/logo_archiving.gif"
-            alt="isc-logo"
-            width={130}
-            height={0}
-            style={{ height: "auto" }}
-          />
+          <div className="w-[130px]">
+            <Image
+              src="/assets/img/logo_archiving.gif"
+              alt="isc-logo"
+              width={10000}
+              height={10000}
+            />
+          </div>
         </Link>
         {/* Texts */}
         <div className="flex flex-row">
           {/* HOME */}
           <div
             className={`text-xl sm:text-2xl ${
-              pathName == "/" ? "text-[#FF5C00]" : ""
+              pathname == "/" ? "text-[#FF5C00]" : ""
             }`}
           >
             <Link href="/">HOME</Link>
@@ -40,7 +42,7 @@ export default function Header() {
           {/* ABOUT */}
           <div
             className={`pl-2 text-xl sm:pl-4 sm:text-2xl ${
-              pathName == "/about" ? "text-[#FF5C00]" : ""
+              pathname == "/about" ? "text-[#FF5C00]" : ""
             }`}
           >
             <Link href="/about">ABOUT</Link>
@@ -48,7 +50,7 @@ export default function Header() {
           {/* ARCHIVING */}
           <div
             className={`px-2 text-xl sm:px-4 sm:text-2xl ${
-              pathName == "/archiving" ? "text-[#FF5C00]" : ""
+              pathname == "/archiving" ? "text-[#FF5C00]" : ""
             }`}
           >
             <Link href="/archiving">ARCHIVING</Link>
