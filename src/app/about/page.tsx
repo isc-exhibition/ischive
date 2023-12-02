@@ -6,8 +6,6 @@ about/page.tsx:
 import Image from "next/image";
 import Layout from "@/components/Layout/Layout";
 import ProfileContainer from "./ProfileContainer";
-import HomeLogo from "../../assets/img/home.png";
-import IgLogo from "../../assets/img/instagram.png";
 
 export default function About() {
   const pms = [
@@ -139,8 +137,22 @@ export default function About() {
           </p>
         </div>
         <div className="flex flex-row justify-end">
-          <Image src={HomeLogo} alt="home-logo" className="mr-12 w-10" />
-          <Image src={IgLogo} alt="ig-logo" className="mr-14 w-10" />
+          <div className="mr-12 w-10">
+            <Image
+              src="/assets/img/home.png"
+              alt="home-logo"
+              width={10000}
+              height={10000}
+            />
+          </div>
+          <div className="mr-12 w-10">
+            <Image
+              src="/assets/img/instagram.png"
+              alt="ig-logo"
+              width={10000}
+              height={10000}
+            />
+          </div>
         </div>
       </div>
       {/* h1: CREDITS */}
@@ -159,6 +171,7 @@ export default function About() {
               major={item.major}
               name={item.name}
               account={item.account}
+              id={item.id}
               key={item.id}
             />
           ))}
@@ -178,6 +191,7 @@ export default function About() {
               major={item.major}
               name={item.name}
               account={item.account}
+              id={item.id}
               key={item.id}
             />
           ))}
@@ -197,6 +211,7 @@ export default function About() {
               major={item.major}
               name={item.name}
               account={item.account}
+              id={item.id}
               key={item.id}
             />
           ))}
