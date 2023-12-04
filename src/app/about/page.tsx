@@ -5,7 +5,7 @@ about/page.tsx:
 
 import Image from "next/image";
 import Layout from "@/components/Layout/Layout";
-import ProfileContainer from "../../components/CreditsContainer/ProfileContainer";
+import ProfileContainer from "@/components/ProfileContainer/ProfileContainer";
 
 export default function About() {
   const pms = [
