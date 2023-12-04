@@ -8,7 +8,7 @@ import Layout from "@/components/Layout/Layout";
 import ProfileContainer from "@/components/ProfileContainer/ProfileContainer";
 
 export default function About() {
-  const pms = [
+  const managers = [
     {
       team: "기획팀",
       isHead: true,
@@ -164,7 +164,7 @@ export default function About() {
       {/* div: profiles */}
       <div className="border-t-2 border-solid border-black">
         <div className="mx-5 flex flex-row flex-wrap">
-          {pms.map((item) => (
+          {managers.map((item) => (
             <ProfileContainer
               team={item.team}
               isHead={item.isHead}
