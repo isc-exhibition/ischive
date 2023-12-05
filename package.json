@@ -10,9 +10,11 @@
     "deploy": "next build && git add out/ && git commit -m \"Deploy Next.js to gh-pages\" && git subtree push --prefix out origin gh-pages",
     "start": "next start",
     "lint": "next lint"
-
   },
   "dependencies": {
+    "embla-carousel-autoplay": "^8.0.0-rc15",
+    "embla-carousel-react": "^8.0.0-rc15",
+    "heroicons": "^2.0.18",
     "next": "14.0.3",
     "react": "^18",
     "react-dom": "^18"
