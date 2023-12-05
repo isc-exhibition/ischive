@@ -232,7 +232,7 @@ export default function Main() {
         
         <div className=" border-t-2 border-solid border-black pt-6">
         <div className='flex justify-center content-center items-center'>
-        <div className='relative w-full max-w-screen-lg mx-auto '> 
+        <div className='relative w-screen max-w-screen-lg mx-auto '> 
             <button
                 aria-label='go to previous slide'
                 onClick={handlePrevious}
@@ -247,7 +247,7 @@ export default function Main() {
             >
               <ChevronRightIcon className='w-5 h-5' />
             </button>
-            <div className='overflow-hidden' ref={emblaRef} >
+            <div className='overflow-hidden h-screen' ref={emblaRef} >
                 <div className='flex'>
                     {slides.map((slide, index) => (
                     <div key={index} className='flex-[0_0_100%] aspect-video mx-4' style={{
@@ -265,7 +265,7 @@ export default function Main() {
                             <img
                                 src={slide.url}
                                 alt={slide.name}
-                                className='w-auto h-5/6  object-cover rounded-lg shadow-md '
+                                className='w-auto h-full  object-cover rounded-lg shadow-md '
                                 />
                         </div>
                         
