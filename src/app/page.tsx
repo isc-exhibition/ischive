@@ -227,9 +227,9 @@ export default function Main() {
       };
 
   return (
-    <div>
+    <Layout>
         <h2>서울대학교 정보문화학 연합전공</h2>
-        <h1>EXHIBITI0Ns</h1>
+        
         <div className=" border-t-2 border-solid border-black pt-6">
         <div className='flex justify-center content-center items-center'>
         <div className='relative w-full max-w-screen-lg mx-auto '> 
@@ -290,7 +290,7 @@ export default function Main() {
         </div>
         
      
-      </div>
-  
+      
+    </Layout>
   );
 }
