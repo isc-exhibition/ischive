@@ -227,7 +227,7 @@ export default function Main() {
       };
 
   return (
-    <Layout>
+    <div>
         <h2>서울대학교 정보문화학 연합전공</h2>
         <h1>EXHIBITI0Ns</h1>
         <div className=" border-t-2 border-solid border-black pt-6">
@@ -290,7 +290,7 @@ export default function Main() {
         </div>
         
      
-      
-    </Layout>
+      </div>
+  
   );
 }
