@@ -229,7 +229,7 @@ export default function Main() {
   return (
     <Layout>
         <h2>서울대학교 정보문화학 연합전공</h2>
-        <h1>EXHIBITI0N HIST0RY</h1>
+        <h1>EXHIBITI0Ns</h1>
         <div className=" border-t-2 border-solid border-black pt-6">
         <div className='flex justify-center content-center items-center'>
         <div className='relative w-full max-w-screen-lg mx-auto '> 
@@ -255,17 +255,17 @@ export default function Main() {
                         opacity: `${tweenValues[index]?.opacity || 1}`,
                         transition: 'transform 0.3s, opacity 0.3s'
                             }}>
-                        <div className='text-center my-2'>
+                        <div className='text-center'>
                             <h1>{slide.semester}</h1>
                             <h2>{slide.name}</h2>
                         </div>
 
 
-                        <div className='flex justify-center items-center h-full'>
+                        <div className='flex justify-center align-middle items-center h-full'>
                             <img
                                 src={slide.url}
                                 alt={slide.name}
-                                className='w-auto h-full object-cover rounded-lg shadow-md '
+                                className='w-auto h-5/6  object-cover rounded-lg shadow-md '
                                 />
                         </div>
                         
