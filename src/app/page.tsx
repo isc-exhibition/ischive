@@ -8,7 +8,7 @@ import Layout from "@/components/Layout/Layout";
 import { useEffect, useRef, useState,useCallback } from 'react';
 import  useEmblaCarousel  from 'embla-carousel-react';
 import './progressbar.css';
-//import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/solid';
+import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/solid';
 const TWEEN_FACTOR = 3;
 
 const numberWithinRange = (number, min, max) =>
@@ -21,6 +21,13 @@ export default function main() {
     const [selectedIndex, setSelectedIndex] = useState(0); // State to track the current slide index
 
     const slides = [
+        {
+        semester: '2023-2',
+        name: 'ChrISCmas',
+        date: '2023.12.21(목) ~ 2023.12.22(금)',
+        link: 'https://www.instagram.com/p/C0VZk0XvKpF/?img_index=1',
+        url: "/assets/img/poster/poster23_2.png"
+        },  
         {
           semester: '2023-1',
           name: '꿈(과제)과 환상(팀플)의 나라, 정문랜드',
@@ -161,12 +168,12 @@ export default function main() {
         const scrollProgress = embla.scrollProgress();
         const styles = embla.scrollSnapList().map((scrollSnap, index) => {
             let diffToTarget = scrollSnap - scrollProgress;
-            if (Math.abs(diffToTarget) > 0.5) { 
+            if (Math.abs(diffToTarget) > 0.3) { 
                 return { scale: 0, opacity: 0 };
             } else {
                 const tweenValue = 1 - Math.abs(diffToTarget * TWEEN_FACTOR);
                 const scale = numberWithinRange(tweenValue, 0.8, 1.5); // Scale up to 1.2 for the middle slide
-                const opacity = numberWithinRange(tweenValue, 0.5, 1);
+                const opacity = numberWithinRange(tweenValue, 0, 1);
                 return { scale, opacity };
             }
         });
@@ -189,39 +196,57 @@ export default function main() {
         embla.on('init', updateSelectedIndex);
      
       }, [embla, onScroll,updateSelectedIndex]);
+
+      const onProgressBarClick = (event) => {
+        if (!embla) return;
+
+        const progressBar = event.currentTarget;
+        const rect = progressBar.getBoundingClientRect();
+        const clickedPositionX = event.clientX - rect.left; // get the x position of the click
+        const clickedPositionRatio = clickedPositionX / rect.width; // get the click position as a ratio of the progress bar width
+
+        const slideToGo = Math.floor(clickedPositionRatio * slides.length);
+        embla.scrollTo(slideToGo);
+      };
+
       const renderProgressBar = () => {
         return (
-          <div className="progress-bar">
-            {slides.map((_, index) => (
-              <div
-                key={index}
-                className={`progress-bar__segment ${index === selectedIndex ? 'active' : ''}`}
-                style={{ width: `${100 / slides.length}%` }}
-              />
-            ))}
-          </div>
+          <div className="progress-bar-container" onClick={onProgressBarClick}>
+            <div className="progress-bar">
+                {slides.map((_, index) => (
+                    <div
+                        key={index}
+                        className={`progress-bar__segment ${index === selectedIndex ? 'active' : ''}`}
+                        style={{ width: `${100 / slides.length}%` }}
+                    />
+                ))}
+            </div>
+        </div>
         );
       };
 
   return (
     <Layout>
-      {/* h1: isc exhibitions */}
-      <h1>ISC</h1>
-        <div className='flex justify-center items-center'>
-        <div className='relative w-full max-w-screen-md mx-auto'> 
+        <h2>서울대학교 정보문화학 연합전공</h2>
+        <h1>EXHIBITI0N HIST0RY</h1>
+        <div className="border-b-2 border-t-2 border-solid border-black py-9">
+        <div className='flex justify-center content-center items-center'>
+        <div className='relative w-full max-w-screen-md mx-auto '> 
             <button
                 aria-label='go to previous slide'
                 onClick={handlePrevious}
                 className='h-8 w-8 rounded-full flex items-center justify-center bg-white bg-opacity-40  absolute top-1/2 -translate-y-1/2 z-10 shadow-md left-4 text-black'
             >
+              <ChevronLeftIcon className='w-5 h-5' />
             </button>
             <button
                 aria-label='go to next slide'
                 onClick={handleNext}
                 className='h-8 w-8 rounded-full flex items-center justify-center bg-white bg-opacity-40 absolute top-1/2 -translate-y-1/2 z-10 shadow-md right-4 text-black'
             >
+              <ChevronRightIcon className='w-5 h-5' />
             </button>
-            <div className='overflow' ref={emblaRef} >
+            <div className='overflow-hidden' ref={emblaRef} >
                 <div className='flex'>
                     {slides.map((slide, index) => (
                     <div key={index} className='flex-[0_0_100%] aspect-video mx-4' style={{
@@ -261,6 +286,8 @@ export default function main() {
         </div>
         
         </div>
+        </div>
+        
      
       
     </Layout>

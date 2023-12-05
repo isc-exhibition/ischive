@@ -77,7 +77,7 @@ globals.css:
 
   /* h2: Pretendard, extrabold */
   h2 {
-    @apply font-Pretendard text-2xl font-extrabold md:my-1 md:text-3xl;
+    @apply mx-4 font-Pretendard text-2xl font-extrabold md:my-1 md:text-3xl;
   }
 
   /* h4: MonoplexWideNerd, bold */

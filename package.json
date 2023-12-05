@@ -12,6 +12,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@heroicons/react": "^2.0.18",
     "embla-carousel-autoplay": "^8.0.0-rc15",
     "embla-carousel-react": "^8.0.0-rc15",
     "heroicons": "^2.0.18",
