@@ -1,0 +1,16 @@
+.progress-bar {
+    display: flex;
+    width: 100%;
+    height: 10px; /* Adjust as needed */
+    background-color: #e0e0e0;
+  }
+  
+  .progress-bar__segment {
+    height: 100%;
+    background-color: #f3f9ff; /* Active segment color */
+  }
+  
+  .progress-bar__segment.active {
+    background-color: #ff8400; /* Current segment color */
+  }
+  
