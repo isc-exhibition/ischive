@@ -229,9 +229,9 @@ export default function main() {
     <Layout>
         <h2>서울대학교 정보문화학 연합전공</h2>
         <h1>EXHIBITI0N HIST0RY</h1>
-        <div className="border-b-2 border-t-2 border-solid border-black py-9">
+        <div className=" border-t-2 border-solid border-black pt-6">
         <div className='flex justify-center content-center items-center'>
-        <div className='relative w-full max-w-screen-md mx-auto '> 
+        <div className='relative w-full max-w-screen-lg mx-auto '> 
             <button
                 aria-label='go to previous slide'
                 onClick={handlePrevious}
@@ -264,7 +264,7 @@ export default function main() {
                             <img
                                 src={slide.url}
                                 alt={slide.name}
-                                className='w-auto h-full object-cover rounded-lg'
+                                className='w-auto h-full object-cover rounded-lg shadow-md '
                                 />
                         </div>
                         
@@ -274,7 +274,7 @@ export default function main() {
                                     <button
                                         onClick={() => window.location.href = slide.link}
                                         className='mx-auto block bg-orange-500 text-white py-2 px-4 rounded-md'>
-                                        Link
+                                        보러가기
                                     </button>
                         
                     </div>
