@@ -6,8 +6,9 @@ archiving/page.tsx:
 
 import Layout from "@/components/Layout/Layout";
 import SemesterSelect from "@/components/SemesterSelect/SemesterSelect";
+import { courses } from "../api/courses";
 
-export default async function Page() {
+export default function Page() {
   return (
     <Layout>
       {/* h1: ROADMAP */}
