@@ -11,13 +11,13 @@ import './progressbar.css';
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/solid';
 const TWEEN_FACTOR = 3;
 
-const numberWithinRange = (number, min, max) =>
+const numberWithinRange = (number: number, min: number, max: number) =>
   Math.min(Math.max(number, min), max);
 
 
-export default function main() {
+export default function Main() {
     const [emblaRef, embla] = useEmblaCarousel({ loop: false });
-    const [tweenValues, setTweenValues] = useState([]);
+    const [tweenValues, setTweenValues] = useState<{ scale: number; opacity: number; }[]>([]);
     const [selectedIndex, setSelectedIndex] = useState(0); // State to track the current slide index
 
     const slides = [
@@ -179,6 +179,7 @@ export default function main() {
         });
   
         setTweenValues(styles);
+        
       }, [embla]);
       const updateSelectedIndex = useCallback(() => {
         if (embla) {
@@ -197,7 +198,7 @@ export default function main() {
      
       }, [embla, onScroll,updateSelectedIndex]);
 
-      const onProgressBarClick = (event) => {
+      const onProgressBarClick = (event: { currentTarget: any; clientX: number; }) => {
         if (!embla) return;
 
         const progressBar = event.currentTarget;
