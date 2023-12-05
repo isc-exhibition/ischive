@@ -5,7 +5,7 @@ Header.tsx:
 */
 
 import Image from "next/image";
-
+import {EnvelopeIcon} from '@heroicons/react/24/outline';
 export default function Footer() {
   return (
     /* footer fixed at the bottom of the page */
@@ -15,7 +15,7 @@ export default function Footer() {
         <div className="flex flex-row items-center pb-2 pt-4">
           <div className="w-[20px] sm:w-[28px]">
             <Image
-              src="/assets/img/snu_ui_small.png"
+              src="/assets/img/snu_ui_download.svg"
               alt="snu-logo"
               width={10000}
               height={10000}
@@ -29,12 +29,7 @@ export default function Footer() {
         {/* line 2 */}
         <div className="flex flex-row items-center pb-4 pt-2">
           <div className="w-[20px] sm:w-[28px]">
-            <Image
-              src="/assets/img/email_small.png"
-              alt="email"
-              width={10000}
-              height={10000}
-            />
+          <EnvelopeIcon className='w-100 h-100 text-white' />
           </div>
           <p className="pl-2 text-sm text-white sm:text-lg">
             snuiscexhibition@gmail.com

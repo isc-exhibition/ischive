@@ -65,7 +65,7 @@ globals.css:
     font-weight: 700;
   }
 
-  /* header -> div : MonplexWideNerd, light */
+  /* header -> div : MonoplexWideNerd, light */
   header div {
     @apply font-MonoplexWideNerd font-normal;
   }
@@ -78,6 +78,11 @@ globals.css:
   /* h2: Pretendard, extrabold */
   h2 {
     @apply mx-4 font-Pretendard text-2xl font-extrabold md:my-1 md:text-3xl;
+  }
+
+  /* h4: MonoplexWideNerd, bold */
+  h4 {
+    @apply font-MonoplexWideNerd text-xl font-bold md:text-2xl;
   }
 
   /* footer -> p : Pretendard, light */
