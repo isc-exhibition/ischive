@@ -8,7 +8,7 @@ archiving/page.tsx:
 
 import Layout from "@/components/Layout/Layout";
 import SemesterSelect from "@/components/SemesterSelect/SemesterSelect";
-import { courses, TrackType } from "../api/courses";
+import { courses, TrackType } from "../../api/courses";
 import { useState } from "react";
 import CoursesContainer from "@/components/CoursesContainer/CoursesContainer";
 

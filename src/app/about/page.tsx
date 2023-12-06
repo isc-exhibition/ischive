@@ -6,103 +6,16 @@ about/page.tsx:
 import Image from "next/image";
 import Layout from "@/components/Layout/Layout";
 import ProfileContainer from "@/components/ProfileContainer/ProfileContainer";
+import { managers, designers, developers } from "@/api/members";
 
 export default function About() {
-  const managers = [
-    {
-      team: "기획팀",
-      isHead: true,
-      major: "국어국문학과",
-      name: "이예은",
-      account: "@y_eun07",
-      id: 0,
-    },
-    {
-      team: "기획팀",
-      isHead: false,
-      major: "국악과",
-      name: "이지수",
-      account: "@ljspraysun",
-      id: 1,
-    },
-    {
-      team: "기획팀",
-      isHead: false,
-      major: "서어서문학과",
-      name: "최지민",
-      account: "@jimmmin___",
-      id: 2,
-    },
-  ];
-
-  const designers = [
-    {
-      team: "디자인팀",
-      isHead: false,
-      major: "미학과",
-      name: "박수빈",
-      account: "@xu8inx",
-      id: 5,
-    },
-    {
-      team: "디자인팀",
-      isHead: false,
-      major: "금속공예과",
-      name: "박미란",
-      account: "@mirannaranna",
-      id: 4,
-    },
-    {
-      team: "디자인팀",
-      isHead: true,
-      major: "사회학과",
-      name: "배정은",
-      account: "bje0305@snu.ac.kr",
-      id: 3,
-    },
-  ];
-
-  const developers = [
-    {
-      team: "개발팀",
-      isHead: true,
-      major: "자유전공학부",
-      name: "주혜현",
-      account: "@vermilion_sol",
-      id: 6,
-    },
-    {
-      team: "개발팀",
-      isHead: false,
-      major: "자유전공학부",
-      name: "김민지",
-      account: "@kiminji000",
-      id: 7,
-    },
-    {
-      team: "개발팀",
-      isHead: false,
-      major: "전기정보공학부",
-      name: "박준영",
-      account: "@partlyjadedyouth",
-      id: 8,
-    },
-    {
-      team: "개발팀",
-      isHead: false,
-      major: "전기정보공학부",
-      name: "이서현",
-      account: "@seohyun___lee",
-      id: 6,
-    },
-  ];
-
   return (
     <Layout>
       {/* h1: GREETINGS */}
       <h1>GREETINGS</h1>
       {/* div: container for greetings message */}
       <div className="border-b-2 border-t-2 border-solid border-black py-9">
+        {/* greetings message */}
         <div className="px-10 text-lg">
           <p>
             누군가로 하여금 일하게 만드는 동력은 여러 종류가 있겠지만, 우리
@@ -136,22 +49,37 @@ export default function About() {
             <strong>연합전공 정보문화학 온라인 과제 아카이빙 사이트 TF</strong>
           </p>
         </div>
+        {/* div: container for home and instagram logo */}
         <div className="flex flex-row justify-end">
+          {/* home logo */}
           <div className="mr-12 w-10">
-            <Image
-              src="/assets/img/home.png"
-              alt="home-logo"
-              width={10000}
-              height={10000}
-            />
+            <a
+              href="https://isc.snu.ac.kr/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Image
+                src="/assets/img/home.png"
+                alt="home-logo"
+                width={10000}
+                height={10000}
+              />
+            </a>
           </div>
+          {/* instagram logo */}
           <div className="mr-12 w-10">
-            <Image
-              src="/assets/img/instagram.png"
-              alt="ig-logo"
-              width={10000}
-              height={10000}
-            />
+            <a
+              href="https://www.instagram.com/isc_snu/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Image
+                src="/assets/img/instagram.png"
+                alt="ig-logo"
+                width={10000}
+                height={10000}
+              />
+            </a>
           </div>
         </div>
       </div>

@@ -2,7 +2,9 @@
  * @type {import('next').NextConfig}
  */
 const prefix =
-  process.env.NODE_ENV === 'production' ? 'https://isc-exhibition.github.io/ischive/' : ''
+  process.env.NODE_ENV === "production"
+    ? "https://isc-exhibition.github.io/ischive/"
+    : "";
 
 const nextConfig = {
   output: "export",

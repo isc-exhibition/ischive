@@ -1,4 +1,4 @@
-import { CourseType } from "@/app/api/courses";
+import { CourseType } from "@/api/courses";
 
 function CourseContainer({ course }: { course: CourseType }) {
   return (

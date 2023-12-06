@@ -6,7 +6,7 @@ SemesterSelect.tsx:
 "use client";
 
 import { useState } from "react";
-import { courses } from "@/app/api/courses";
+import { courses } from "@/api/courses";
 
 export default function SemesterSelect({
   // callback function to send changed value to outside
