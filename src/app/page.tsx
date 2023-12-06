@@ -231,8 +231,7 @@ export default function Main() {
         <h2>서울대학교 정보문화학 연합전공</h2>
         
         <div className=" border-t-2 border-solid border-black pt-6">
-        <div className='flex justify-center content-center items-center'>
-        <div className='relative w-screen max-w-screen-lg mx-auto '> 
+        <div className='relative max-w-screen-md mx-auto '> 
             <button
                 aria-label='go to previous slide'
                 onClick={handlePrevious}
@@ -247,34 +246,35 @@ export default function Main() {
             >
               <ChevronRightIcon className='w-5 h-5' />
             </button>
-            <div className='overflow-hidden h-screen' ref={emblaRef} >
-                <div className='flex'>
+            <div className='overflow-hidden' ref={emblaRef} >
+                <div className='flex '>
                     {slides.map((slide, index) => (
-                    <div key={index} className='flex-[0_0_100%] aspect-video mx-4' style={{
+                    <div key={index} className='flex-[0_0_100%] aspect-auto mx-4 ' style={{
                         transform: `scale(${tweenValues[index]?.scale || 1})`,
                         opacity: `${tweenValues[index]?.opacity || 1}`,
                         transition: 'transform 0.3s, opacity 0.3s'
                             }}>
-                        <div className='text-center'>
+                        <div className='text-center my-2'>
                             <h1>{slide.semester}</h1>
                             <h2>{slide.name}</h2>
                         </div>
 
 
-                        <div className='flex justify-center align-middle items-center h-full'>
+                        <div className='flex justify-center align-middle items-center  '>
                             <img
                                 src={slide.url}
                                 alt={slide.name}
-                                className='w-auto h-full  object-cover rounded-lg shadow-md '
+                                loading="lazy"
+                                className='w-[30vw] object-contain rounded-lg shadow-md'
                                 />
                         </div>
                         
                         <div className='text-center my-2'>
-                            <h2>{slide.date}</h2>
+                            <h4>{slide.date}</h4>
                         </div>
                                     <button
                                         onClick={() => window.location.href = slide.link}
-                                        className='mx-auto block bg-orange-500 text-white py-2 px-4 rounded-md'>
+                                        className='mx-auto block  bg-orange-500 text-white py-2 px-4 rounded-md'>
                                         보러가기
                                     </button>
                         
@@ -286,7 +286,6 @@ export default function Main() {
             </div>
         </div>
         
-        </div>
         </div>
         
      
