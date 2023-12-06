@@ -6,9 +6,10 @@ SemesterSelect.tsx:
 "use client";
 
 import { useState } from "react";
+import { courses } from "@/app/api/courses";
 
 export default function SemesterSelect({
-  /* callback function to send changed value to outside */
+  // callback function to send changed value to outside
   onSelectionChange,
 }: {
   onSelectionChange?: (value: string) => void;
@@ -26,6 +27,8 @@ export default function SemesterSelect({
     onSelectionChange?.(newValue); // send newValue to onSelectionChange function
   };
 
+  const semesters: string[] = Object.keys(courses);
+
   return (
     <div className="flex flex-row items-center font-Pretendard text-2xl font-extrabold md:text-3xl">
       <div className="border-r-2 border-solid border-black ">
@@ -36,11 +39,25 @@ export default function SemesterSelect({
           onBlur={() => setIsFocused(false)} // false when blurred
           value={selectedSemester}
         >
-          {/* value: entire, 2023-2, 2023-1, ... */}
-          <option value={"entire"}>전체 학기</option>
-          <option value={"2023-1"}>2023-1</option>
-          <option value={"2022-2"}>2022-2</option>
-          <option value={"2022-1"}>2022-1</option>
+          {semesters.map((value) => {
+            {
+              /* value: entire, 2023-2, 2023-1, ... */
+            }
+            {
+              /* option: 전체 학기, 2023-2, 2023-1, ... */
+            }
+            // basically, option equals to value
+            let option = value;
+            if (option === "entire") {
+              // if option equals to "entire", change option to "전체 학기"
+              option = "전체 학기";
+            }
+            return (
+              <option value={value} key={value}>
+                {option}
+              </option>
+            );
+          })}
         </select>
         <span className="px-3 text-lg">{isFocused ? "▲" : "▼"}</span>
       </div>

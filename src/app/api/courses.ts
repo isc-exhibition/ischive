@@ -1,3 +1,39 @@
+/* 
+api/courses.ts:
+  An api(?) that holds data for courses
+  A course contains its name and courseId (Please refer to CourseType)
+  courseId is specified according to the row number in Google Sheets
+
+The things that must be updated manually every semester:
+  Coursestype,
+  courses
+*/
+
+// CoursesType: a type for 'courses'
+export type CoursesType = {
+  [index: string]: TrackType;
+  entire: TrackType;
+  "2023-2": TrackType;
+  "2023-1": TrackType;
+  "2022-2": TrackType;
+};
+
+// TrackType: a type for tracks (hci: [], mediaContents: [], etc)
+export type TrackType = {
+  [index: string]: object;
+  hci: Array<CourseType>;
+  mediaContents: Array<CourseType>;
+  technology: Array<CourseType>;
+  project: Array<CourseType>;
+};
+
+// CourseType: a type for a course ({name: ..., courseId: ...})
+export type CourseType = {
+  [key: string]: any;
+  name: string;
+  courseId: number;
+};
+
 /* courses: an object that holds informations of courses
 
 entire (Object): 전체 학기
@@ -14,27 +50,6 @@ entire (Object): 전체 학기
     name
     courseId
 */
-
-export type CoursesType = {
-  [index: string]: TrackType;
-  entire: TrackType;
-  "2023-1": TrackType;
-};
-
-export type TrackType = {
-  [index: string]: object;
-  hci: Array<CourseType>;
-  mediaContents: Array<CourseType>;
-  technology: Array<CourseType>;
-  project: Array<CourseType>;
-};
-
-export type CourseType = {
-  [key: string]: any;
-  name: string;
-  courseId: number;
-};
-
 export const courses: CoursesType = {
   entire: {
     hci: [
@@ -73,6 +88,12 @@ export const courses: CoursesType = {
       { name: "산학연구실습", courseId: 25 },
       { name: "창의연구실습", courseId: 26 },
     ],
+  },
+  "2023-2": {
+    hci: [],
+    mediaContents: [],
+    technology: [],
+    project: [],
   },
   "2023-1": {
     hci: [
