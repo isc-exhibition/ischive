@@ -3,6 +3,8 @@ api/courses.ts:
   An api(?) that holds data for courses
   A course contains its name and courseId (Please refer to CourseType)
   courseId is specified according to the row number in Google Sheets
+  
+  This file must be hard-coded and modified manually every semester
 
 The things that must be updated manually every semester:
   Coursestype,
