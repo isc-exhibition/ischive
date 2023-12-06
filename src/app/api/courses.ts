@@ -5,8 +5,14 @@ entire (Object): 전체 학기
     name (string): name of the course
     courseId (number): id of the course
   mediaContents (Array)
+    name
+    courseId
   technology (Array)
+    name
+    courseId
   project: Array
+    name
+    courseId
 */
 
 export type CoursesType = {

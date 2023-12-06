@@ -8,6 +8,7 @@ SemesterSelect.tsx:
 import { useState } from "react";
 
 export default function SemesterSelect({
+  /* callback function to send changed value to outside */
   onSelectionChange,
 }: {
   onSelectionChange?: (value: string) => void;

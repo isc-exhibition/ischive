@@ -32,22 +32,22 @@ export default function Page() {
           }}
         />
       </div>
-      {/* div: container for HCI tracks and courses */}
+      {/* div: container for HCI track and courses */}
       <div className="border-t-2 border-solid border-black pl-10 pt-10">
         <h4 className="mb-2"># HCI Track</h4>
         <CoursesContainer courses={selectedCourses["hci"]} />
       </div>
-      {/* div: container for Media & Contents tracks and courses */}
+      {/* div: container for Media & Contents track and courses */}
       <div className="pl-10 pt-10">
         <h4 className="mb-2"># Media & Contents Track</h4>
         <CoursesContainer courses={selectedCourses["mediaContents"]} />
       </div>
-      {/* div: container for Technology tracks and courses */}
+      {/* div: container for Technology track and courses */}
       <div className="pl-10 pt-10">
         <h4 className="mb-2"># Technology Track</h4>
         <CoursesContainer courses={selectedCourses["technology"]} />
       </div>
-      {/* div: container for Project tracks and courses */}
+      {/* div: container for Project track and courses */}
       <div className="px-10 py-10">
         <h4 className="mb-2"># Project</h4>
         <CoursesContainer courses={selectedCourses["project"]} />
