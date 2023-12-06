@@ -1,3 +1,8 @@
+/* 
+CoursesContainer.tsx:
+  A container that contains CourseButtons
+*/
+
 import { CourseType } from "@/api/courses";
 
 function CourseButton({ course }: { course: CourseType }) {
