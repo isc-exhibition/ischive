@@ -1,21 +1,20 @@
 .progress-bar-container {
-  margin-top: 40px; 
+  margin-top: 40px;
   margin-bottom: 40px;
 }
 
 .progress-bar {
-    display: flex;
-    width: 100%;
-    height: 10px; 
-    background-color: #e0e0e0;
-  }
-  
-  .progress-bar__segment {
-    height: 100%;
-    background-color: #f3f9ff; 
-  }
-  
-  .progress-bar__segment.active {
-    background-color: #ff8400; 
-  }
-  
+  display: flex;
+  width: 100%;
+  height: 10px;
+  background-color: #e0e0e0;
+}
+
+.progress-bar__segment {
+  height: 100%;
+  background-color: #f3f9ff;
+}
+
+.progress-bar__segment.active {
+  background-color: #ff8400;
+}
