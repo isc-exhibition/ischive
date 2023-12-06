@@ -2,7 +2,7 @@ import { CourseType } from "@/app/api/courses";
 
 function CourseContainer({ course }: { course: CourseType }) {
   return (
-    <button className="rounded-3xl border-2 font-Pretendard">
+    <button className="my-2 mr-2 rounded-3xl border border-solid border-black px-7 py-2 font-Pretendard">
       {course.name}
     </button>
   );
