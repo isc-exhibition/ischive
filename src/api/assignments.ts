@@ -67,13 +67,15 @@ export async function fetchAssignments(courseName: string) {
         courseName: courseName,
         assignmentName: value[3],
         members: value[7],
-        thumbnail: value[6],
+        thumbnail: `https://drive.google.com/uc?export=view&id=${
+          value[5].split("=")[1]
+        }`,
         id: value[13],
       };
-
+      console.log(assignment.thumbnail);
       assignments.push(assignment);
     }
   });
-
+  console.log(assignments);
   return assignments;
 }

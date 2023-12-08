@@ -7,6 +7,11 @@ const prefix =
     : "";
 
 const nextConfig = {
+  // images
+  images: {
+    domains: ["localhost", "drive.google.com"],
+  },
+
   // output: "export",
 
   // Optional: Change links `/me` -> `/me/` and emit `/me.html` -> `/me/index.html`

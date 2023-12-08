@@ -10,6 +10,7 @@ import {
   AssignmentType,
 } from "@/api/assignments";
 import { courses } from "@/api/courses";
+import AssignmentsContainer from "@/components/AssignmentsContainer/AssignmentsContainer";
 import Layout from "@/components/Layout/Layout";
 import SemesterSelect from "@/components/SemesterSelect/SemesterSelect";
 import Image from "next/image";
@@ -63,7 +64,7 @@ export default async function ArchivingCourse({
       <div className="border-t-2 border-solid border-black p-10">
         {/* h3: semester */}
         <h2>Semester</h2>
-        <div>{}</div>
+        <AssignmentsContainer assignments={assignments} />
       </div>
     </Layout>
   );

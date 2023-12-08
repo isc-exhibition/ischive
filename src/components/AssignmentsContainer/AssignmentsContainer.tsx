@@ -4,17 +4,18 @@ AssignmentsContainer.tsx:
 */
 
 import { AssignmentType } from "@/api/assignments";
-import { Asap_Condensed } from "next/font/google";
 import Image from "next/image";
 
 function AssignmentButton({ assignment }: { assignment: AssignmentType }) {
   return (
-    <div className="w-2">
+    <div className="m-4 h-48 w-48">
       <Image
         src={assignment.thumbnail}
-        alt="thumbnail"
+        alt={`thumb-${assignment.id}`}
         width={10000}
         height={10000}
+        unoptimized={true}
+        className="object-contain"
       />
     </div>
   );
