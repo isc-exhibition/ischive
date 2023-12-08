@@ -12,7 +12,7 @@ import { courses, TrackType } from "../../api/courses";
 import { useState } from "react";
 import CoursesContainer from "@/components/CoursesContainer/CoursesContainer";
 
-export default function Page() {
+export default function Archiving() {
   const [selectedSemester, setSelectedSemester] = useState<string>("entire");
   const [selectedCourses, setSelectedCourses] = useState<TrackType>(
     courses["entire"],
