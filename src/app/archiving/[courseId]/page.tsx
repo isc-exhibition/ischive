@@ -19,13 +19,13 @@ import Link from "next/link";
 export default async function ArchivingCourse({
   params,
 }: {
-  params: { slug: string };
+  params: { courseId: string };
 }) {
   // extract semesters from courses
   const semesters = Object.keys(courses).slice(1);
 
   // extract courseId from slug
-  const courseId: number = parseInt(params.slug);
+  const courseId: number = parseInt(params.courseId);
 
   // a semester selected by SemesterSelect
 
