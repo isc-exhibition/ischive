@@ -44,8 +44,6 @@ export async function fetchCourseInfo(courseId: number) {
     professors: values.slice(3).reverse(),
   };
 
-  console.log(courseInfo.professors);
-
   return courseInfo;
 }
 
