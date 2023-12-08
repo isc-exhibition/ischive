@@ -41,8 +41,10 @@ export async function fetchCourseInfo(courseId: number) {
     courseId: values[0],
     track: values[1],
     name: values[2],
-    professors: values.slice(3),
+    professors: values.slice(3).reverse(),
   };
+
+  console.log(courseInfo.professors);
 
   return courseInfo;
 }
@@ -72,10 +74,8 @@ export async function fetchAssignments(courseName: string) {
         }`,
         id: value[13],
       };
-      console.log(assignment.thumbnail);
       assignments.push(assignment);
     }
   });
-  console.log(assignments);
   return assignments;
 }

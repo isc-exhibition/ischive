@@ -22,10 +22,12 @@ export default async function ArchivingCourse({
   params: { slug: string };
 }) {
   // extract semesters from courses
-  const semesters = Object.keys(courses);
+  const semesters = Object.keys(courses).slice(1);
 
   // extract courseId from slug
   const courseId: number = parseInt(params.slug);
+
+  // a semester selected by SemesterSelect
 
   // fetch course info by using Google Sheet API
   const courseInfo: CourseInfoType = await fetchCourseInfo(courseId);
@@ -37,10 +39,13 @@ export default async function ArchivingCourse({
     <Layout>
       {/* h1: COURSE */}
       <h1>C0URSE</h1>
-      {/* SemesterSelect: dropdown select box */}
-      <div className="border-t-2 border-solid border-black">
-        <SemesterSelect />
-      </div>
+
+      {/* <div className="border-t-2 border-solid border-black">
+        <SemesterSelect
+          onSelectionChange={(value) => setSelectedSemester(value)}
+        />
+      </div> */}
+
       {/* div: a container for course name, track, and back button */}
       <div className="flex flex-row items-center justify-between border-t-2 border-solid border-black">
         {/* course name and track */}
@@ -60,11 +65,39 @@ export default async function ArchivingCourse({
           />
         </Link>
       </div>
+
       {/* div: a container for assignments */}
-      <div className="border-t-2 border-solid border-black p-8 md:p-10">
-        {/* h3: semester */}
-        <h2>Semester</h2>
-        <AssignmentsContainer assignments={assignments} />
+      <div className="border-t-2 border-solid border-black p-8 font-Pretendard md:p-10">
+        {semesters.map((semester) => {
+          if (semester != "entire") {
+            // filter assignments by semesters
+            const filteredAssignments = assignments.filter(
+              (assignment) =>
+                `${assignment.year}-${assignment.semester}` === semester,
+            );
+
+            // semester's index in semesters
+            const semesterIndex = semesters.findIndex(
+              (elem) => elem === semester,
+            );
+
+            if (courseInfo.professors[semesterIndex] != "") {
+              return (
+                /* div: a container for assignments in each semester */
+                <div key={semester} className="mb-10">
+                  {/* h2: semester */}
+                  <h2 className="mx-0 mb-2">{`${semester.split("-")[0]}학년도 ${
+                    semester.split("-")[1]
+                  }학기`}</h2>
+                  {/* p: professor */}
+                  <p>{`지도교수 | ${courseInfo.professors[semesterIndex]}`}</p>
+                  {/* AssignmentsContainer */}
+                  <AssignmentsContainer assignments={filteredAssignments} />
+                </div>
+              );
+            }
+          }
+        })}
       </div>
     </Layout>
   );
