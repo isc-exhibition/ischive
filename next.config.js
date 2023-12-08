@@ -7,12 +7,18 @@ const prefix =
     : "";
 
 const nextConfig = {
+  // output: "export",
+
   // images
   images: {
-    domains: ["localhost", "drive.google.com"],
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "drive.google.com",
+        port: "",
+      },
+    ],
   },
-
-  // output: "export",
 
   // Optional: Change links `/me` -> `/me/` and emit `/me.html` -> `/me/index.html`
   trailingSlash: true,
