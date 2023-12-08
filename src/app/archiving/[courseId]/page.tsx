@@ -1,5 +1,5 @@
 /* 
-archiving/[slug]/page.tsx:
+archiving/[courseId]/page.tsx:
     A page for each course in /archiving
 */
 
