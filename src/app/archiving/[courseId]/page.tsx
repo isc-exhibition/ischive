@@ -18,13 +18,12 @@ import Link from "next/link";
 
 // Generate segments for [courseId]
 export async function generateStaticParams() {
-  const archivings = await fetch("https://www.ischive.com/archiving").then(
-    (res) => res.json(),
-  );
+  let courseIds = [];
+  for (let i = 1; i < 27; i++) {
+    courseIds.push({ courseId: i.toString() });
+  }
 
-  return archivings.map((archiving: any) => ({
-    courseId: archiving.courseId.slug,
-  }));
+  return courseIds;
 }
 
 export default async function ArchivingCourse({
