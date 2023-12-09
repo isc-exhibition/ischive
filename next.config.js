@@ -7,7 +7,7 @@ const prefix =
     : "";
 
 const nextConfig = {
-  output: "export",
+  // output: "export",
 
   // images
   images: {
