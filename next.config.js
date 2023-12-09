@@ -28,6 +28,11 @@ const nextConfig = {
 
   // Optional: Change the output directory `out` -> `dist`
   distDir: "dist",
+
+  reactStrictMode: true,
+  env: {
+    BASE_URL: process.env.BASE_URL,
+  },
 };
 
 module.exports = nextConfig;
