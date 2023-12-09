@@ -18,6 +18,8 @@ function AssignmentButton({ assignment }: { assignment: AssignmentType }) {
           width={10000}
           height={10000}
           sizes="100vw"
+          placeholder="blur"
+          blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mOUkBCrBwABXQDHIqKtmAAAAABJRU5ErkJggg=="
           className="mb-1 h-32 w-32 md:mb-2 md:h-40 md:w-40"
         />
         {/* a component that appears when hovered on thumbnail */}

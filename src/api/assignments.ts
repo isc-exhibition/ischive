@@ -29,9 +29,9 @@ export async function fetchCourseInfo(courseId: number) {
   // Sheet 'CourseInfoSheet' is holding infos about courses
   const response = await fetch(
     `https://sheets.googleapis.com/v4/spreadsheets/${
-      process.env.GOOGLE_SHEET_ID
+      process.env.NEXT_PUBLIC_GOOGLE_SHEET_ID
     }/values/CourseInfoSheet!${courseId + 1}:${courseId + 1}?key=${
-      process.env.GOOGLE_API_KEY
+      process.env.NEXT_PUBLIC_GOOGLE_API_KEY
     }`,
   );
   const json = await response.json();
@@ -51,7 +51,7 @@ export async function fetchCourseInfo(courseId: number) {
 export async function fetchAssignments(courseName: string) {
   // Sheet 'AssignmentsSheet' is holding infos about assignments
   const response = await fetch(
-    `https://sheets.googleapis.com/v4/spreadsheets/${process.env.GOOGLE_SHEET_ID}/values/AssignmentsSheet?key=${process.env.GOOGLE_API_KEY}`,
+    `https://sheets.googleapis.com/v4/spreadsheets/${process.env.NEXT_PUBLIC_GOOGLE_SHEET_ID}/values/AssignmentsSheet?key=${process.env.NEXT_PUBLIC_GOOGLE_API_KEY}`,
   );
   const json = await response.json();
   const values = await json.values;
