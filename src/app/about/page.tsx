@@ -14,7 +14,7 @@ export default function About() {
       {/* h1: GREETINGS */}
       <h1>GREETINGS</h1>
       {/* div: container for greetings message */}
-      <div className="border-b-2 border-t-2 border-solid border-black py-9">
+      <div className="border-b-2 border-t-2 border-solid border-black py-9 font-Pretendard">
         {/* greetings message */}
         <div className="px-10 text-lg">
           <p>

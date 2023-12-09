@@ -23,7 +23,7 @@ export type CoursesType = {
 
 // TrackType: a type for tracks (hci: [], mediaContents: [], etc)
 export type TrackType = {
-  [index: string]: object;
+  [index: string]: Array<CourseType>;
   hci: Array<CourseType>;
   mediaContents: Array<CourseType>;
   technology: Array<CourseType>;

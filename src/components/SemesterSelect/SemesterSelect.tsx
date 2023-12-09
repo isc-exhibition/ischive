@@ -31,7 +31,7 @@ export default function SemesterSelect({
 
   return (
     <div className="flex flex-row items-center font-Pretendard text-2xl font-extrabold md:text-3xl">
-      <div className="border-r-2 border-solid border-black ">
+      <div className="border-r-2 border-solid border-black">
         <select
           className="appearance-none border-r-2 border-solid border-black px-16"
           onFocus={() => setIsFocused(true)} // true when focused
