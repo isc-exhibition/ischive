@@ -16,12 +16,15 @@ import SemesterSelect from "@/components/SemesterSelect/SemesterSelect";
 import Image from "next/image";
 import Link from "next/link";
 
+// Generate segments for [courseId]
 export async function generateStaticParams() {
-  let courseIds = [];
-  for (let i = 1; i <= 26; i++) {
-    courseIds.push({ courseId: i.toString() });
-  }
-  return courseIds;
+  const archivings = await fetch("https://www.ischive.com/archiving").then(
+    (res) => res.json(),
+  );
+
+  return archivings.map((archiving: any) => ({
+    courseId: archiving.courseId.slug,
+  }));
 }
 
 export default async function ArchivingCourse({
