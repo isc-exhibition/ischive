@@ -16,7 +16,7 @@ import SemesterSelect from "@/components/SemesterSelect/SemesterSelect";
 import Image from "next/image";
 import Link from "next/link";
 
-export function generateStaticParams() {
+export async function generateStaticParams() {
   let courseIds = [];
   for (let i = 1; i <= 26; i++) {
     courseIds.push({ courseId: i.toString() });
