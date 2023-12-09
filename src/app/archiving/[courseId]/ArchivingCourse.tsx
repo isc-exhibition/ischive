@@ -1,6 +1,6 @@
 /* 
-archiving/[courseId]/page.tsx:
-    A page for each course in /archiving
+archiving/[courseId]/ArchivingCourse.tsx:
+    A client-side page for each course in /archiving
 */
 
 "use client";
