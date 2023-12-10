@@ -15,12 +15,9 @@ function AssignmentButton({ assignment }: { assignment: AssignmentType }) {
       <div className="relative mb-1 h-32 w-32 md:mb-2 md:h-40 md:w-40">
         <Link
           href={{
-            pathname: "/assignment/[assignmentId]",
-            query: {
-              assignment: JSON.stringify(assignment),
-            },
+            pathname: `/assignment/${assignment.id}`,
+            query: { assignment: JSON.stringify(assignment) },
           }}
-          as={`/assignment/${assignment.id}`}
         >
           <Image
             src={assignment.thumbnail}

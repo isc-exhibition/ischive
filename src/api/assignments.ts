@@ -25,6 +25,22 @@ export type AssignmentType = {
   id: string;
 };
 
+// AssignmentInfoType: a type for assignmentInfo
+export type AssignmentInfoType = {
+  [index: string]: any;
+  semester: string;
+  courseName: string;
+  assignmentName: string;
+  description: string;
+  gdLink?: string;
+  members: string;
+  roles: string;
+  igAccounts: string;
+  emails: string;
+  assignmentLink?: string;
+  id: string;
+};
+
 // fetchCourseInfo: fetch courseInfo by courseId
 export async function fetchCourseInfo(courseId: number) {
   // Sheet 'CourseInfoSheet' is holding infos about courses
@@ -78,4 +94,36 @@ export async function fetchAssignments(courseId: number, courseName: string) {
     }
   });
   return assignments;
+}
+
+// fetchAssignmentInfo: fetch assignmentInfo by assignmentId
+export async function fetchAssignmentInfo(assignmentId: string) {
+  // Sheet 'AssignmentsSheet' is holding infos about assignments
+  const response = await fetch(
+    `https://sheets.googleapis.com/v4/spreadsheets/${process.env.NEXT_PUBLIC_GOOGLE_SHEET_ID}/values/AssignmentsSheet?key=${process.env.NEXT_PUBLIC_GOOGLE_API_KEY}`,
+  );
+  const json = await response.json();
+  const values = await json.values;
+
+  // filter values by assignmentId
+  const selectedAssignment: string[] = values.filter(
+    (value: any) => value[13] === assignmentId,
+  );
+
+  // initialize assignmentInfo by selectedAssignment
+  let assignmentInfo: AssignmentInfoType = {
+    semester: selectedAssignment[1],
+    courseName: selectedAssignment[2],
+    assignmentName: selectedAssignment[3],
+    description: selectedAssignment[4],
+    gdLink: selectedAssignment[5 + 1],
+    members: selectedAssignment[6 + 1],
+    roles: selectedAssignment[7 + 1],
+    igAccounts: selectedAssignment[8 + 1],
+    emails: selectedAssignment[9 + 1],
+    assignmentLink: selectedAssignment[10 + 1],
+    id: selectedAssignment[13],
+  };
+
+  return assignmentInfo;
 }
