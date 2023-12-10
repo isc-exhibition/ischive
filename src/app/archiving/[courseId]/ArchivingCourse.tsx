@@ -56,7 +56,10 @@ export default function ArchivingCourse({
   useEffect(() => {
     const fetchData = async () => {
       if (courseInfo.courseId != 0) {
-        const fetchedAssignments = await fetchAssignments(courseInfo.name);
+        const fetchedAssignments = await fetchAssignments(
+          courseInfo.courseId,
+          courseInfo.name,
+        );
         setAssignments(fetchedAssignments);
       }
     };

@@ -17,6 +17,7 @@ export type AssignmentType = {
   [index: string]: any;
   year: number;
   semester: number;
+  courseId: number;
   courseName: string;
   assignmentName: string;
   members: string;
@@ -48,7 +49,7 @@ export async function fetchCourseInfo(courseId: number) {
 }
 
 // fetchAssignments: fetch assignments by name
-export async function fetchAssignments(courseName: string) {
+export async function fetchAssignments(courseId: number, courseName: string) {
   // Sheet 'AssignmentsSheet' is holding infos about assignments
   const response = await fetch(
     `https://sheets.googleapis.com/v4/spreadsheets/${process.env.NEXT_PUBLIC_GOOGLE_SHEET_ID}/values/AssignmentsSheet?key=${process.env.NEXT_PUBLIC_GOOGLE_API_KEY}`,
@@ -64,6 +65,7 @@ export async function fetchAssignments(courseName: string) {
       const assignment: AssignmentType = {
         year: parseInt(value[1].slice(0, 4)),
         semester: parseInt(value[1][8]),
+        courseId: courseId,
         courseName: courseName,
         assignmentName: value[3],
         members: value[7],
