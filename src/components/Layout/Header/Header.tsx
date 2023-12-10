@@ -41,9 +41,7 @@ export default function Header() {
           {/* ABOUT */}
           <div
             className={`pl-2 text-xl sm:pl-4 sm:text-2xl ${
-              pathname === "/about" || pathname === "/about/"
-                ? "text-[#FF5C00]"
-                : ""
+              pathname.includes("/about") ? "text-[#FF5C00]" : ""
             }`}
           >
             <Link href="/about">ABOUT</Link>
@@ -51,9 +49,7 @@ export default function Header() {
           {/* ARCHIVING */}
           <div
             className={`px-2 text-xl sm:px-4 sm:text-2xl ${
-              pathname === "/archiving" || pathname === "/archiving/"
-                ? "text-[#FF5C00]"
-                : ""
+              pathname.includes("/archiving") ? "text-[#FF5C00]" : ""
             }`}
           >
             <Link href="/archiving">ARCHIVING</Link>
