@@ -97,7 +97,7 @@ export default function ArchivingAssignment({
               width={0}
               height={0}
               sizes="100vw"
-              className="w-9 md:w-10"
+              className="w-9 cursor-pointer md:w-10"
               onClick={() => router.back()}
             />
           </div>

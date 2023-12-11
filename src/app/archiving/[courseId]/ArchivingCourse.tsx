@@ -105,7 +105,7 @@ export default function ArchivingCourse({
           height={0}
           sizes="100vw"
           alt="back-orange"
-          className="w-10 md:w-12"
+          className="w-10 cursor-pointer md:w-12"
           onClick={() => router.back()}
         />
       </div>
