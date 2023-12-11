@@ -13,12 +13,7 @@ function AssignmentButton({ assignment }: { assignment: AssignmentType }) {
     <div className="m-3 box-border flex w-32 flex-col items-center text-center font-Pretendard md:m-4 md:w-40">
       {/* thumbnail */}
       <div className="relative mb-1 h-32 w-32 md:mb-2 md:h-40 md:w-40">
-        <Link
-          href={{
-            pathname: `/assignment/${assignment.id}`,
-            query: { assignment: JSON.stringify(assignment) },
-          }}
-        >
+        <Link href={`/assignment/${assignment.id}`}>
           <Image
             src={assignment.thumbnail}
             alt={`thumb-${assignment.id}`}

@@ -49,7 +49,9 @@ export default function Header() {
           {/* ARCHIVING */}
           <div
             className={`px-2 text-xl sm:px-4 sm:text-2xl ${
-              pathname.includes("/archiving") ? "text-[#FF5C00]" : ""
+              pathname.includes("/archiving") || pathname.includes("assignment")
+                ? "text-[#FF5C00]"
+                : ""
             }`}
           >
             <Link href="/archiving">ARCHIVING</Link>

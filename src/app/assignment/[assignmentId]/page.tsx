@@ -1,30 +1,11 @@
-"use client";
+/* 
+assignment/[assignmentId]/page.tsx:
+    A server-side page for each assignment in /archiving/[courseId]
+*/
 
-import { redirect, useSearchParams } from "next/navigation";
-import Layout from "@/components/Layout/Layout";
-import { AssignmentType } from "@/api/assignments";
+import ArchivingAssignment from "./ArchivingAssignment";
 
-export default function ArchivingAssignment({
-  params,
-}: {
-  params: { assignmentId: string };
-}) {
-  // useSearchParams to get query
-  const searchParams = useSearchParams();
-
-  if (!searchParams.has("assignment")) {
-    redirect("/archiving");
-  }
-
-  const assignment: AssignmentType = JSON.parse(
-    searchParams.get("assignment")!,
-  );
-
-  return (
-    <Layout>
-      <h1>STUDENT W0RK</h1>
-      <h2>{assignment.assignmentName}</h2>
-      <p>{assignment.members}</p>
-    </Layout>
-  );
+export default function Page({ params }: { params: { assignmentId: string } }) {
+  const { assignmentId } = params;
+  return <ArchivingAssignment params={{ assignmentId: assignmentId }} />;
 }

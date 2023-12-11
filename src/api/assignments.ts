@@ -32,12 +32,12 @@ export type AssignmentInfoType = {
   courseName: string;
   assignmentName: string;
   description: string;
-  gdLink?: string;
+  embedLink?: string;
   members: string;
   roles: string;
   igAccounts: string;
   emails: string;
-  assignmentLink?: string;
+  assignmentLink: string;
   id: string;
 };
 
@@ -93,6 +93,7 @@ export async function fetchAssignments(courseId: number, courseName: string) {
       assignments.push(assignment);
     }
   });
+
   return assignments;
 }
 
@@ -112,17 +113,19 @@ export async function fetchAssignmentInfo(assignmentId: string) {
 
   // initialize assignmentInfo by selectedAssignment
   let assignmentInfo: AssignmentInfoType = {
-    semester: selectedAssignment[1],
-    courseName: selectedAssignment[2],
-    assignmentName: selectedAssignment[3],
-    description: selectedAssignment[4],
-    gdLink: selectedAssignment[5 + 1],
-    members: selectedAssignment[6 + 1],
-    roles: selectedAssignment[7 + 1],
-    igAccounts: selectedAssignment[8 + 1],
-    emails: selectedAssignment[9 + 1],
-    assignmentLink: selectedAssignment[10 + 1],
-    id: selectedAssignment[13],
+    semester: selectedAssignment[0][1],
+    courseName: selectedAssignment[0][2],
+    assignmentName: selectedAssignment[0][3],
+    description: selectedAssignment[0][4],
+    embedLink: `https://drive.google.com/file/d/${
+      selectedAssignment[0][5 + 1].split("=")[1]
+    }/preview`,
+    members: selectedAssignment[0][6 + 1],
+    roles: selectedAssignment[0][7 + 1],
+    igAccounts: selectedAssignment[0][8 + 1],
+    emails: selectedAssignment[0][9 + 1],
+    assignmentLink: selectedAssignment[0][10 + 1],
+    id: selectedAssignment[0][13],
   };
 
   return assignmentInfo;

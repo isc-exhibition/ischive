@@ -17,6 +17,7 @@ import Layout from "@/components/Layout/Layout";
 import SemesterSelect from "@/components/SemesterSelect/SemesterSelect";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
 export default function ArchivingCourse({
@@ -24,6 +25,9 @@ export default function ArchivingCourse({
 }: {
   params: { courseId: string };
 }) {
+  // router const
+  const router = useRouter();
+
   // extract semesters from courses
   const semesters = Object.keys(courses).slice(1);
 
@@ -94,16 +98,16 @@ export default function ArchivingCourse({
           <h4 className="ml-6 text-[#FF5C00]">{courseInfo.track}</h4>
         </div>
         {/* back button */}
-        <Link href="/archiving">
-          <Image
-            src={"/assets/img/back_orange.png"}
-            width={0}
-            height={0}
-            sizes="100vw"
-            alt="back-orange"
-            className="w-10 md:w-12"
-          />
-        </Link>
+
+        <Image
+          src={"/assets/img/back_orange.png"}
+          width={0}
+          height={0}
+          sizes="100vw"
+          alt="back-orange"
+          className="w-10 md:w-12"
+          onClick={() => router.back()}
+        />
       </div>
 
       {/* div: a container for assignments */}
