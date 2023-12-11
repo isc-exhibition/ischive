@@ -31,7 +31,7 @@ export const designers = [
     isHead: false,
     major: "미학과",
     name: "박수빈",
-    account: "@xu8inx",
+    account: "@s4xd4d3",
     id: 5,
   },
   {
