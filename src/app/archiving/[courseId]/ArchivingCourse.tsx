@@ -95,7 +95,7 @@ export default function ArchivingCourse({
         {/* course name and track */}
         <div className="flex flex-row items-center">
           <h2>{courseInfo.name}</h2>
-          <h4 className="ml-6 text-[#FF5C00]">{courseInfo.track}</h4>
+          <h4 className="text-[#FF5C00]">{courseInfo.track.slice(0, -6)}</h4>
         </div>
         {/* back button */}
 
