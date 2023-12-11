@@ -134,7 +134,7 @@ export default function ArchivingAssignment({
               </p>
             </div>
             {/* div: profiles */}
-            <div className="mt-8 grid w-full grid-cols-2 items-start justify-items-start font-Pretendard">
+            <div className="mt-8 grid w-full grid-cols-2 items-start justify-items-start font-Pretendard text-sm md:text-lg">
               {members.map((member, index) => (
                 <div className="mb-8 flex flex-col items-start" key={index}>
                   {/* name and role */}
