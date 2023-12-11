@@ -10,7 +10,7 @@ function Layout({ children }: { children: React.ReactNode }) {
   return (
     <div className="flex min-h-screen flex-col bg-white">
       <Header />
-      <main className="mt-[60px]">{children}</main>
+      <main className="mt-[52px]">{children}</main>
       <Footer />
     </div>
   );
