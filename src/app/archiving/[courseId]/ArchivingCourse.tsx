@@ -16,7 +16,6 @@ import AssignmentsContainer from "@/components/AssignmentsContainer/AssignmentsC
 import Layout from "@/components/Layout/Layout";
 import SemesterSelect from "@/components/SemesterSelect/SemesterSelect";
 import Image from "next/image";
-import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
@@ -95,7 +94,11 @@ export default function ArchivingCourse({
         {/* course name and track */}
         <div className="flex flex-row items-center">
           <h2>{courseInfo.name}</h2>
-          <h4 className="text-[#FF5C00]">{courseInfo.track.slice(0, -6)}</h4>
+          <h4 className="text-[#FF5C00]">
+            {courseInfo.track === "# Project"
+              ? courseInfo.track
+              : courseInfo.track.slice(0, -6)}
+          </h4>
         </div>
         {/* back button */}
 
