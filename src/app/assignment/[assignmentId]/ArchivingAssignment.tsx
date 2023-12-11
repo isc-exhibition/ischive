@@ -71,7 +71,7 @@ export default function ArchivingAssignment({
           {/* STUDENT WORKS and semester with courseName */}
           <div className="flex flex-row items-center justify-between">
             {/* h1: STUDENT WORKS */}
-            <h1>STUDENT W0RKS</h1>
+            <h1 className="text-5xl md:text-7xl">STUDENT W0RKS</h1>
             {/* div: semester and courseName */}
             <div className="text-Pretendard invisible mr-3 flex flex-col items-end font-bold text-[#FF5C00] md:visible">
               <p>{assignmentInfo.semester}</p>
@@ -81,7 +81,7 @@ export default function ArchivingAssignment({
 
           {/* h2: assignment name */}
           <div className="border-y-2 border-solid border-black">
-            <h2 className="text-2xl lg:text-3xl">
+            <h2 className="text-lg md:text-xl lg:text-3xl">
               {assignmentInfo.assignmentName}
             </h2>
           </div>
@@ -113,7 +113,7 @@ export default function ArchivingAssignment({
                 ></iframe>
               </div>
             )}
-            {/* div: assignmentLink, a link to external website */}
+            {/* div: assignmentLink, a link button to external website */}
             {assignmentInfo.assignmentLink === "" ? null : (
               <Link
                 href={assignmentInfo.assignmentLink}
@@ -136,19 +136,16 @@ export default function ArchivingAssignment({
             {/* div: profiles */}
             <div className="mt-8 grid w-full grid-cols-2 items-start justify-items-start font-Pretendard">
               {members.map((member, index) => (
-                <div
-                  className="mb-8 flex flex-col items-start pl-[30%]"
-                  key={index}
-                >
+                <div className="mb-8 flex flex-col items-start" key={index}>
                   {/* name and role */}
                   <div className="flex flex-row">
                     <span className="font-bold text-[#FF5C00]">{member}</span>
                     <span className="text-[#FF5C00]">
-                      &nbsp;| {roles[index]}
+                      &nbsp;| {roles[index] ? roles[index] : null}
                     </span>
                   </div>
                   {/* instagram account */}
-                  {igAccounts[index].length < 4 ? null : (
+                  {!igAccounts[index] || igAccounts[index].length < 4 ? null : (
                     <div className="flex flex-row items-center">
                       <Link
                         href={`https://www.instagram.com/${igAccounts[
@@ -170,7 +167,7 @@ export default function ArchivingAssignment({
                     </div>
                   )}
                   {/* email */}
-                  <div>{emails[index]}</div>
+                  <div>{emails[index] ? emails[index] : null}</div>
                 </div>
               ))}
             </div>
