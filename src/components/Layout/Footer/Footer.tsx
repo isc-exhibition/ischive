@@ -5,7 +5,7 @@ Header.tsx:
 */
 
 import Image from "next/image";
-import {EnvelopeIcon} from '@heroicons/react/24/outline';
+import { EnvelopeIcon } from "@heroicons/react/24/outline";
 export default function Footer() {
   return (
     /* footer fixed at the bottom of the page */
@@ -29,7 +29,7 @@ export default function Footer() {
         {/* line 2 */}
         <div className="flex flex-row items-center pb-4 pt-2">
           <div className="w-[20px] sm:w-[28px]">
-          <EnvelopeIcon className='w-100 h-100 text-white' />
+            <EnvelopeIcon className="w-100 h-100 text-white" />
           </div>
           <p className="pl-2 text-sm text-white sm:text-lg">
             snuiscexhibition@gmail.com
