@@ -50,7 +50,7 @@ export default function About() {
           </p>
         </div>
         {/* div: container for home and instagram logo */}
-        <div className="flex flex-row justify-end">
+        <div className="mt-4 flex flex-row justify-end">
           {/* home logo */}
           <div className="mr-12 w-10">
             <a
@@ -111,7 +111,7 @@ export default function About() {
       </div>
       {/* div: profiles */}
       <div className="border-t-2 border-solid border-black">
-        <div className="mx-5 flex flex-row-reverse flex-wrap">
+        <div className="mx-5 flex flex-row-reverse flex-wrap-reverse">
           {designers.map((item) => (
             <ProfileContainer
               team={item.team}

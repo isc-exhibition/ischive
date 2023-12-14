@@ -15,7 +15,7 @@ export default function Header() {
 
   return (
     /* header fixed at the top while scrolling */
-    <header className="fixed z-50 h-[60px] w-full border-b-2 border-solid border-black bg-white">
+    <header className="fixed z-50 h-[52px] w-full border-b-2 border-solid border-black bg-white">
       <div className="flex items-center justify-between">
         {/* Logo -> nav to home */}
         <Link href="/">
