@@ -7,8 +7,6 @@ const prefix =
     : "";
 
 const nextConfig = {
-  output: "export",
-
   // images
   images: {
     remotePatterns: [
