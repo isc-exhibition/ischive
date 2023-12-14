@@ -25,6 +25,7 @@ function AssignmentButton({ assignment }: { assignment: AssignmentType }) {
           /> */}
           <img
             src={assignment.thumbnail}
+            alt={assignment.id}
             className="mb-1 h-32 w-32 md:mb-2 md:h-40 md:w-40"
           />
           {/* a component that appears when hovered on thumbnail */}
