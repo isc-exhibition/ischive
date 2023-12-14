@@ -25,7 +25,7 @@ function AssignmentButton({ assignment }: { assignment: AssignmentType }) {
             className="mb-1 h-32 w-32 md:mb-2 md:h-40 md:w-40"
           />
           {/* a component that appears when hovered on thumbnail */}
-          <p className="absolute inset-0 flex items-center bg-gradient-to-b from-black to-gray-500 p-2 text-white opacity-0 hover:opacity-90">
+          <p className="absolute inset-0 flex items-center justify-center bg-gradient-to-b from-black to-gray-500 p-2 text-white opacity-0 hover:opacity-90">
             {assignment.members}
           </p>
         </Link>
