@@ -3,7 +3,7 @@ AssignmentsContainer.tsx:
     A container that contains AssignmentButton
 */
 
-import { AssignmentType } from "@/api/assignments";
+import { AssignmentType } from "@/api/fetch";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -17,15 +17,15 @@ function AssignmentButton({ assignment }: { assignment: AssignmentType }) {
           <Image
             src={assignment.thumbnail}
             alt={`thumb-${assignment.id}`}
-            width={10000}
-            height={10000}
-            sizes="100vw"
+            width={0}
+            height={0}
+            sizes="20vw"
             placeholder="blur"
             blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mOUkBCrBwABXQDHIqKtmAAAAABJRU5ErkJggg=="
             className="mb-1 h-32 w-32 md:mb-2 md:h-40 md:w-40"
           />
           {/* a component that appears when hovered on thumbnail */}
-          <p className="absolute inset-0 flex items-center bg-gradient-to-b from-black to-gray-500 p-2 text-white opacity-0 hover:opacity-90">
+          <p className="absolute inset-0 flex items-center justify-center bg-gradient-to-b from-black to-gray-500 p-2 text-white opacity-0 hover:opacity-90">
             {assignment.members}
           </p>
         </Link>

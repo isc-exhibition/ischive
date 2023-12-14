@@ -6,7 +6,7 @@ assignment/[assignmentId]/ArchivingAssignment.tsx:
 "use client";
 
 import Layout from "@/components/Layout/Layout";
-import { AssignmentInfoType, fetchAssignmentInfo } from "@/api/assignments";
+import { AssignmentInfoType, fetchAssignmentInfo } from "@/api/fetch";
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
@@ -55,10 +55,10 @@ export default function ArchivingAssignment({
 
   // set members, igAccounts, and emails when assignmentInfo is fetched
   useEffect(() => {
-    setMembers(assignmentInfo.members.split(", "));
-    setRoles(assignmentInfo.roles.split(", "));
-    setIgAccounts(assignmentInfo.igAccounts.split(", "));
-    setEmails(assignmentInfo.emails.split(", "));
+    setMembers(assignmentInfo.members.replace(/\s+/g, "").split(","));
+    setRoles(assignmentInfo.roles.replace(/\s+/g, "").split(","));
+    setIgAccounts(assignmentInfo.igAccounts.replace(/\s+/g, "").split(","));
+    setEmails(assignmentInfo.emails.replace(/\s+/g, "").split(","));
   }, [assignmentInfo]);
 
   return (
@@ -96,7 +96,7 @@ export default function ArchivingAssignment({
               alt="back-orange"
               width={0}
               height={0}
-              sizes="100vw"
+              sizes="20vw"
               className="w-9 cursor-pointer md:w-10"
               onClick={() => router.back()}
             />
@@ -134,9 +134,20 @@ export default function ArchivingAssignment({
               </p>
             </div>
             {/* div: profiles */}
-            <div className="mt-8 grid w-full grid-cols-2 items-start justify-items-start font-Pretendard text-sm md:text-lg">
+            <div
+              className={`mt-8 w-full font-Pretendard text-sm md:text-lg ${
+                members.length != 1
+                  ? "grid grid-cols-2 items-start justify-items-start"
+                  : ""
+              }`}
+            >
               {members.map((member, index) => (
-                <div className="mb-8 flex flex-col items-start" key={index}>
+                <div
+                  className={`mb-8 flex flex-col ${
+                    members.length != 1 ? "items-start" : "items-center"
+                  }`}
+                  key={index}
+                >
                   {/* name and role */}
                   <div className="flex flex-row">
                     <span className="font-bold text-[#FF5C00]">{member}</span>
@@ -159,7 +170,7 @@ export default function ArchivingAssignment({
                           alt="ig-logo"
                           width={0}
                           height={0}
-                          sizes="100vw"
+                          sizes="20vw"
                           className="mr-1 h-4 w-4"
                         />
                       </Link>

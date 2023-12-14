@@ -19,14 +19,14 @@ export default function Header() {
       <div className="flex items-center justify-between">
         {/* Logo -> nav to home */}
         <Link href="/">
-          <div className="w-[130px]">
-            <Image
-              src="/assets/img/logo_archiving.gif"
-              alt="isc-logo"
-              width={10000}
-              height={10000}
-            />
-          </div>
+          <Image
+            src="/assets/img/logo_archiving.gif"
+            alt="isc-logo"
+            width={0}
+            height={0}
+            sizes="20vw"
+            className="w-[130px]"
+          />
         </Link>
         {/* Texts */}
         <div className="flex flex-row">
