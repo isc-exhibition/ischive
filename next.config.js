@@ -3,7 +3,7 @@
  */
 
 const nextConfig = {
-  // images
+  // add drive.google.com to remotePatterns
   images: {
     remotePatterns: [
       {
