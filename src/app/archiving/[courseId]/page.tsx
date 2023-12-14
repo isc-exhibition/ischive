@@ -24,5 +24,5 @@ export async function generateStaticParams() {
 
 export default function Page({ params }: { params: { courseId: string } }) {
   const { courseId } = params;
-  return <ArchivingCourse params={{ courseId: params.courseId }} />;
+  return <ArchivingCourse params={{ courseId: courseId }} />;
 }

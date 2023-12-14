@@ -17,10 +17,27 @@ export type AssignmentType = {
   [index: string]: any;
   year: number;
   semester: number;
+  courseId: number;
   courseName: string;
   assignmentName: string;
   members: string;
   thumbnail: string;
+  id: string;
+};
+
+// AssignmentInfoType: a type for assignmentInfo
+export type AssignmentInfoType = {
+  [index: string]: any;
+  semester: string;
+  courseName: string;
+  assignmentName: string;
+  description: string;
+  embedLink?: string;
+  members: string;
+  roles: string;
+  igAccounts: string;
+  emails: string;
+  assignmentLink: string;
   id: string;
 };
 
@@ -48,7 +65,7 @@ export async function fetchCourseInfo(courseId: number) {
 }
 
 // fetchAssignments: fetch assignments by name
-export async function fetchAssignments(courseName: string) {
+export async function fetchAssignments(courseId: number, courseName: string) {
   // Sheet 'AssignmentsSheet' is holding infos about assignments
   const response = await fetch(
     `https://sheets.googleapis.com/v4/spreadsheets/${process.env.NEXT_PUBLIC_GOOGLE_SHEET_ID}/values/AssignmentsSheet?key=${process.env.NEXT_PUBLIC_GOOGLE_API_KEY}`,
@@ -64,6 +81,7 @@ export async function fetchAssignments(courseName: string) {
       const assignment: AssignmentType = {
         year: parseInt(value[1].slice(0, 4)),
         semester: parseInt(value[1][8]),
+        courseId: courseId,
         courseName: courseName,
         assignmentName: value[3],
         members: value[7],
@@ -75,5 +93,40 @@ export async function fetchAssignments(courseName: string) {
       assignments.push(assignment);
     }
   });
+
   return assignments;
+}
+
+// fetchAssignmentInfo: fetch assignmentInfo by assignmentId
+export async function fetchAssignmentInfo(assignmentId: string) {
+  // Sheet 'AssignmentsSheet' is holding infos about assignments
+  const response = await fetch(
+    `https://sheets.googleapis.com/v4/spreadsheets/${process.env.NEXT_PUBLIC_GOOGLE_SHEET_ID}/values/AssignmentsSheet?key=${process.env.NEXT_PUBLIC_GOOGLE_API_KEY}`,
+  );
+  const json = await response.json();
+  const values = await json.values;
+
+  // filter values by assignmentId
+  const selectedAssignment: string[] = values.filter(
+    (value: any) => value[13] === assignmentId,
+  );
+
+  // initialize assignmentInfo by selectedAssignment
+  let assignmentInfo: AssignmentInfoType = {
+    semester: selectedAssignment[0][1],
+    courseName: selectedAssignment[0][2],
+    assignmentName: selectedAssignment[0][3],
+    description: selectedAssignment[0][4],
+    embedLink: `https://drive.google.com/file/d/${
+      selectedAssignment[0][5 + 1].split("=")[1]
+    }/preview`,
+    members: selectedAssignment[0][6 + 1],
+    roles: selectedAssignment[0][7 + 1],
+    igAccounts: selectedAssignment[0][8 + 1],
+    emails: selectedAssignment[0][9 + 1],
+    assignmentLink: selectedAssignment[0][10 + 1],
+    id: selectedAssignment[0][13],
+  };
+
+  return assignmentInfo;
 }

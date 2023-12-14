@@ -7,8 +7,6 @@ const prefix =
     : "";
 
 const nextConfig = {
-  output: "export",
-
   // images
   images: {
     remotePatterns: [
@@ -28,6 +26,17 @@ const nextConfig = {
 
   // Optional: Change the output directory `out` -> `dist`
   distDir: "dist",
+
+  // redirect /assignment to /archiving
+  async redirects() {
+    return [
+      {
+        source: "/assignment",
+        destination: "/archiving",
+        permanent: true,
+      },
+    ];
+  },
 };
 
 module.exports = nextConfig;
