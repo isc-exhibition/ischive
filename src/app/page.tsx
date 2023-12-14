@@ -272,7 +272,9 @@ export default function Main() {
                       alt={slide.name}
                       width={0}
                       height={0}
-                      sizes="100vw"
+                      sizes="20vw"
+                      placeholder="blur"
+                      blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mOUkBCrBwABXQDHIqKtmAAAAABJRU5ErkJggg=="
                       className="w-[30vw] rounded-lg object-contain shadow-md"
                     />
                   </div>

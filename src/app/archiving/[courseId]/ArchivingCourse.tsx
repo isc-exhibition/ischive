@@ -106,7 +106,7 @@ export default function ArchivingCourse({
           src={"/assets/img/back_orange.png"}
           width={0}
           height={0}
-          sizes="100vw"
+          sizes="20vw"
           alt="back-orange"
           className="w-10 cursor-pointer md:w-12"
           onClick={() => router.back()}

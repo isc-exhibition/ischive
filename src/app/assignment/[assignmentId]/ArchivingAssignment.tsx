@@ -96,7 +96,7 @@ export default function ArchivingAssignment({
               alt="back-orange"
               width={0}
               height={0}
-              sizes="100vw"
+              sizes="20vw"
               className="w-9 cursor-pointer md:w-10"
               onClick={() => router.back()}
             />
@@ -159,7 +159,7 @@ export default function ArchivingAssignment({
                           alt="ig-logo"
                           width={0}
                           height={0}
-                          sizes="100vw"
+                          sizes="20vw"
                           className="mr-1 h-4 w-4"
                         />
                       </Link>
