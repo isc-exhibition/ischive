@@ -55,10 +55,10 @@ export default function ArchivingAssignment({
 
   // set members, igAccounts, and emails when assignmentInfo is fetched
   useEffect(() => {
-    setMembers(assignmentInfo.members.split(", "));
-    setRoles(assignmentInfo.roles.split(", "));
-    setIgAccounts(assignmentInfo.igAccounts.split(", "));
-    setEmails(assignmentInfo.emails.split(", "));
+    setMembers(assignmentInfo.members.replace(/\s/g, "").split(","));
+    setRoles(assignmentInfo.roles.replace(/\s/g, "").split(","));
+    setIgAccounts(assignmentInfo.igAccounts.replace(/\s/g, "").split(","));
+    setEmails(assignmentInfo.emails.replace(/\s/g, "").split(","));
   }, [assignmentInfo]);
 
   return (
