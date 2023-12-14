@@ -4,7 +4,6 @@ AssignmentsContainer.tsx:
 */
 
 import { AssignmentType } from "@/api/fetch";
-import Image from "next/image";
 import Link from "next/link";
 
 function AssignmentButton({ assignment }: { assignment: AssignmentType }) {
@@ -14,7 +13,7 @@ function AssignmentButton({ assignment }: { assignment: AssignmentType }) {
       {/* thumbnail */}
       <div className="relative mb-1 h-32 w-32 md:mb-2 md:h-40 md:w-40">
         <Link href={`/assignment/${assignment.id}`}>
-          <Image
+          {/* <Image
             src={assignment.thumbnail}
             alt={`thumb-${assignment.id}`}
             width={0}
@@ -22,6 +21,10 @@ function AssignmentButton({ assignment }: { assignment: AssignmentType }) {
             sizes="20vw"
             placeholder="blur"
             blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mOUkBCrBwABXQDHIqKtmAAAAABJRU5ErkJggg=="
+            className="mb-1 h-32 w-32 md:mb-2 md:h-40 md:w-40"
+          /> */}
+          <img
+            src={assignment.thumbnail}
             className="mb-1 h-32 w-32 md:mb-2 md:h-40 md:w-40"
           />
           {/* a component that appears when hovered on thumbnail */}
