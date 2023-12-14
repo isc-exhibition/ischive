@@ -17,6 +17,7 @@ const config: Config = {
     fontFamily: {
       Pretendard: ["Pretendard"],
       MonoplexWideNerd: ["MonoplexWideNerd"],
+      SsurroundAir: ["Cafe24SsurroundAir"]
     },
   },
   plugins: [],

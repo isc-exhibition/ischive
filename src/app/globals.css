@@ -65,6 +65,13 @@ globals.css:
     font-weight: 700;
   }
 
+  /*Cafe24SsurroundAir*/
+  @font-face {
+    font-family: "Cafe24SsurroundAir";
+    src: url("/assets/font/Cafe24SsurroundAir-v1.1.ttf") format("truetype");
+    font-weight: 100;
+  }
+
   /* header -> div : MonoplexWideNerd, light */
   header div {
     @apply font-MonoplexWideNerd font-normal;
