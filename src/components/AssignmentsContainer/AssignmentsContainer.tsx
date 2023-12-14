@@ -3,7 +3,7 @@ AssignmentsContainer.tsx:
     A container that contains AssignmentButton
 */
 
-import { AssignmentType } from "@/api/assignments";
+import { AssignmentType } from "@/api/fetch";
 import Image from "next/image";
 import Link from "next/link";
 

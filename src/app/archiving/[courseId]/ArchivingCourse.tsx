@@ -10,7 +10,7 @@ import {
   fetchCourseInfo,
   fetchAssignments,
   AssignmentType,
-} from "@/api/assignments";
+} from "@/api/fetch";
 import { courses } from "@/api/courses";
 import AssignmentsContainer from "@/components/AssignmentsContainer/AssignmentsContainer";
 import Layout from "@/components/Layout/Layout";

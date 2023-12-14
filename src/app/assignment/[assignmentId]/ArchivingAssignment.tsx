@@ -6,7 +6,7 @@ assignment/[assignmentId]/ArchivingAssignment.tsx:
 "use client";
 
 import Layout from "@/components/Layout/Layout";
-import { AssignmentInfoType, fetchAssignmentInfo } from "@/api/assignments";
+import { AssignmentInfoType, fetchAssignmentInfo } from "@/api/fetch";
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
