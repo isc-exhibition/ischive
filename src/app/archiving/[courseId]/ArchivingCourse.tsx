@@ -101,7 +101,6 @@ export default function ArchivingCourse({
           </h4>
         </div>
         {/* back button */}
-
         <Image
           src={"/assets/img/back_orange.png"}
           width={0}
@@ -132,12 +131,7 @@ export default function ArchivingCourse({
                   `${assignment.year}-${assignment.semester}` === semester,
               );
 
-              // semester's index in semesters
-              const semesterIndex = semesters.findIndex(
-                (elem) => elem === semester,
-              );
-
-              if (courseInfo.professors[semesterIndex] != "") {
+              if (courseInfo.professors[semester] != "") {
                 return (
                   /* div: a container for assignments in each semester */
                   <div key={semester} className="mb-10">
@@ -146,7 +140,7 @@ export default function ArchivingCourse({
                       semester.split("-")[0]
                     }학년도 ${semester.split("-")[1]}학기`}</h2>
                     {/* p: professor */}
-                    <p>{`지도교수 | ${courseInfo.professors[semesterIndex]}`}</p>
+                    <p>{`지도교수 | ${courseInfo.professors[semester]}`}</p>
                     {/* AssignmentsContainer */}
                     <AssignmentsContainer assignments={filteredAssignments} />
                   </div>

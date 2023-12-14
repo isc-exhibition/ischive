@@ -3,13 +3,15 @@ assignments.ts:
     An api that fetches course and assignment infos from Google Sheets
 */
 
+import { courses } from "./courses";
+
 // CourseInfoType: a type for courseInfo
 export type CourseInfoType = {
   [index: string]: any;
   courseId: number;
   track: string;
   name: string;
-  professors: string[];
+  professors: any; // an object (semester: professorName)
 };
 
 // AssignmentType: a type for assignment
@@ -41,6 +43,9 @@ export type AssignmentInfoType = {
   id: string;
 };
 
+// all semesters in Google Sheet
+const semesters = Object.keys(courses).slice(1).reverse();
+
 // fetchCourseInfo: fetch courseInfo by courseId
 export async function fetchCourseInfo(courseId: number) {
   // Sheet 'CourseInfoSheet' is holding infos about courses
@@ -54,11 +59,22 @@ export async function fetchCourseInfo(courseId: number) {
   const json = await response.json();
   const values = await json.values[0];
 
+  // map key: semester and value: name of the corresponding professor
+  const professors: any = {};
+  const professorNames = values.slice(3);
+  for (let i = 0; i < semesters.length; i++) {
+    if (i >= professorNames.length) {
+      professors[semesters[i]] = "";
+    } else {
+      professors[semesters[i]] = professorNames[i];
+    }
+  }
+
   const courseInfo: CourseInfoType = {
     courseId: values[0],
     track: values[1],
     name: values[2],
-    professors: values.slice(3).reverse(),
+    professors: professors,
   };
 
   return courseInfo;
