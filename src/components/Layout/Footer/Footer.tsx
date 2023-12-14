@@ -13,14 +13,13 @@ export default function Footer() {
       <div className="items-center">
         {/* line 1 */}
         <div className="flex flex-row items-center pb-2 pt-4">
-          <div className="w-[20px] sm:w-[28px]">
-            <Image
-              src="/assets/img/snu_ui_download.svg"
-              alt="snu-logo"
-              width={10000}
-              height={10000}
-            />
-          </div>
+          <Image
+            src="/assets/img/snu_ui_download.svg"
+            alt="snu-logo"
+            width={0}
+            height={0}
+            className="w-[20px] sm:w-[28px]"
+          />
           <p className="pl-2 text-sm text-white sm:text-lg">
             서울대학교 연합전공 정보문화학 과제 아카이빙 웹사이트
           </p>
