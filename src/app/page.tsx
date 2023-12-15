@@ -4,6 +4,7 @@ main/page.tsx:
 */
 "use client";
 import Image from "next/image";
+import Link from "next/link";
 import Layout from "@/components/Layout/Layout";
 import { useEffect, useRef, useState, useCallback } from "react";
 import useEmblaCarousel from "embla-carousel-react";
@@ -250,7 +251,7 @@ export default function Main() {
             <ChevronRightIcon className="h-5 w-5" />
           </button>
           <div className="overflow-hidden" ref={emblaRef}>
-            <div className="flex ">
+            <div className="flex">
               {slides.map((slide, index) => (
                 <div
                   key={index}
@@ -282,12 +283,18 @@ export default function Main() {
                   <div className="my-2 text-center">
                     <h4>{slide.date}</h4>
                   </div>
-                  <button
-                    onClick={() => (window.location.href = slide.link)}
-                    className="mx-auto block  rounded-md bg-orange-500 px-4 py-2 text-white"
+
+                  <Link
+                    href={slide.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
-                    보러가기
-                  </button>
+                    <button className="relative h-10 overflow-hidden border border-[#FF5C00] text-[#FF5C00] transition-all duration-200 before:absolute before:bottom-0 before:left-0 before:right-0 before:top-0 before:m-auto before:h-0 before:w-0 before:rounded-sm before:bg-[#FF5C00] before:duration-300 before:ease-out hover:text-white hover:before:h-40 hover:before:w-[100%] hover:before:opacity-80">
+                      <span className="relative z-10 px-4 py-1 font-MonoplexWideNerd font-semibold">
+                        보러가기
+                      </span>
+                    </button>
+                  </Link>
                 </div>
               ))}
             </div>
