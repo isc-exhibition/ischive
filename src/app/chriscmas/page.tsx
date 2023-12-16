@@ -155,7 +155,7 @@ export default function Page() {
               </p>
               <div className="absolute w-4/5 left-1/2 top-1/2 -mt-52 -translate-x-1/2 transform">
                 <Image
-                  src="/assets/img/chriscmas/1216.png"
+                  src="/assets/img/chriscmas/1217.png"
                   alt="decorator image"
                   width={800}
                   height={800}
@@ -163,13 +163,11 @@ export default function Page() {
               </div>
               <div>
                 <p className="font-SsurroundAir absolute left-1/2 top-3/4 -mt-24 w-full -translate-x-1/2 -translate-y-1/2 whitespace-pre-wrap text-center text-base text-white">
-                  {"이번 학기 과제와 팀플은 어떠셨나요?"}
+                  {"학기 중에는 가지지 못했던 작은 여유,"}
                   <br />
-                  {"한 학기 동안 여러분들을 위해 준비한"}
+                  {"크리스마스까지 정무니우스와 함께"}
                   <br />
-                  {"정문 엘프들의 선물(과제)들을"}
-                  <br />
-                  {"확인하러 오세요!"}
+                  {"가져보시는건 어떠세요?"}
                 </p>
               </div>
             </div>
