@@ -7,8 +7,6 @@ import PrizePage from "./PrizePage";
 
 export default function Page() {
   /* for d-day */
-  const [koreanDate, setKoreaDate] = useState<string>("");
-  const [koreanTime, setKoreanTime] = useState<string>("");
   const targetDateTime = new Date(2023, 11, 21, 10, 0, 0).getTime();
   const [dDay, setDDay] = useState("");
   const [timeLeft, setTimeLeft] = useState("");
