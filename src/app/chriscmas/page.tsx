@@ -19,7 +19,7 @@ export default function Page() {
     setIsPresentClicked(true);
     setTimeout(() => {
       setIsAnimationDone(true);
-    }, 3000);
+    }, 2000);
   };
 
   useEffect(() => {
@@ -75,7 +75,7 @@ export default function Page() {
       100% { opacity: 1; transform: scale(1); }
     }
     .glow-animation {
-      animation: glow 3s ease-in-out forwards;
+      animation: glow 2s ease-in-out forwards;
       z-index: -1;
     }
     .shake-animation {
@@ -90,7 +90,7 @@ export default function Page() {
       <style jsx>{animationStyles}</style>
 
       <main className="fixed left-1/2 top-1/2 flex h-full w-full -translate-x-1/2 -translate-y-1/2 items-start justify-center overflow-x-auto overflow-y-auto bg-[rgb(77,101,169)]">
-        <div className="relative box-border flex h-auto w-[408px] flex-col items-center justify-center rounded-3xl bg-white">
+        <div className="relative box-border flex h-auto w-[408px] flex-col items-center justify-center bg-white">
           
           <div className="relative h-full w-full">
             <Image
@@ -101,7 +101,6 @@ export default function Page() {
               width={100}
               height={141}
               priority
-              className="rounded-3xl"
             />
           </div>
           {!isAnimationDone && (
@@ -164,7 +163,9 @@ export default function Page() {
             </div>
           )}
           <div>
-            <p className="font-SsurroundAir absolute left-1/2 top-3/4 w-full -translate-x-1/2 -translate-y-1/2 whitespace-pre-wrap text-center text-sm text-white">
+            <a href="https://www.ischive.com/" className="font-SsurroundAir absolute left-1/2 bottom-1/4 w-full -translate-x-1/2 whitespace-pre-wrap text-center text-sm text-white hover:text-[rgb(179,199,254)] hover:underline">🎁 지난 과제들 보러가기 🎁</a>
+            
+            <p className="font-SsurroundAir absolute left-1/2 bottom-1/4 w-full -translate-x-1/2 translate-y-16 whitespace-pre-wrap text-center text-xs text-[rgb(179,199,254)]">
               {dDay}
               <br />
               {timeLeft}
