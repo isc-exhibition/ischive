@@ -8,12 +8,7 @@ export default function DefaultPage() {
   const [currentMessage, setCurrentMessage] = useState("");
 
   useEffect(() => {
-    const getTestDate = () => {
-      // Simulate a specific date by creating a new Date object
-      // For example, to simulate December 18, 2023:
-      return new Date(2023, 11, 20); // Month is 0-indexed, so 11 is December
-    };
-    const today = getTestDate();
+    const today = new Date();
     const date = today.getDate();
 
     switch (date) {
