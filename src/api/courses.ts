@@ -74,6 +74,7 @@ export const courses: CoursesType = {
       { name: "인터넷과 지식기술", courseId: 17 },
       { name: "미래뉴스실습1", courseId: 27 },
       { name: "미래뉴스실습2", courseId: 28 },
+      { name: "정보문화세미나", courseId: 29 },
     ],
     technology: [
       { name: "정보문화기술입문", courseId: 18 },
@@ -90,10 +91,21 @@ export const courses: CoursesType = {
     ],
   },
   "2023-2": {
-    hci: [],
-    mediaContents: [],
-    technology: [],
-    project: [],
+    hci: [
+      { name: "HCI 이론 및 실습", courseId: 1 },
+      { name: "사용자중심디자인", courseId: 4 },
+    ],
+    mediaContents: [
+      { name: "디지털영상실습2", courseId: 8 },
+      { name: "사운드 인터랙션", courseId: 10 },
+      { name: "인터랙티브 스토리텔링", courseId: 12 },
+      { name: "시리어스 게임", courseId: 14 },
+      { name: "가상현실입문", courseId: 15 },
+      { name: "미래뉴스실습2", courseId: 28 },
+      { name: "정보문화세미나", courseId: 29 },
+    ],
+    technology: [{ name: "정보문화기술입문", courseId: 18 }],
+    project: [{ name: "산학연구실습", courseId: 25 }],
   },
   "2023-1": {
     hci: [
