@@ -105,7 +105,9 @@ export default function ArchivingAssignment({
           {/* div: container for embedLink, description, and profiles of members */}
           <div className="flex flex-col items-center px-[10%] py-[5%]">
             {/* div: embedLink, Google Drive link to embed */}
-            {assignmentInfo.embedLink === "" ? null : (
+            {assignmentInfo.embedLink === "" ||
+            assignmentInfo.embedLink ===
+              "https://drive.google.com/file/d/undefined/preview" ? null : (
               <div className="relative mb-8 w-[100%] px-0 pb-[45%]">
                 <iframe
                   src={assignmentInfo.embedLink}
