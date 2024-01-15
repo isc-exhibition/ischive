@@ -108,7 +108,7 @@ export default function ArchivingAssignment({
             {assignmentInfo.embedLink === "" ||
             assignmentInfo.embedLink ===
               "https://drive.google.com/file/d/undefined/preview" ? null : (
-              <div className="relative mb-8 w-[100%] px-0 pb-[45%]">
+              <div className="relative mb-8 w-[100%] px-0 pb-[70%]">
                 <iframe
                   src={assignmentInfo.embedLink}
                   className="absolute left-0 top-0 h-full w-full"
