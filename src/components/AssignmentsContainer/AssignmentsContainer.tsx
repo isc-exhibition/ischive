@@ -23,11 +23,10 @@ function AssignmentButton({ assignment }: { assignment: AssignmentType }) {
             blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mOUkBCrBwABXQDHIqKtmAAAAABJRU5ErkJggg=="
             className="mb-1 h-32 w-32 md:mb-2 md:h-40 md:w-40"
           /> */}
-          <img
+          <iframe
             src={assignment.thumbnail}
-            alt={assignment.id}
-            className="mb-1 h-32 w-32 md:mb-2 md:h-40 md:w-40"
-          />
+            className="mb-1 h-32 w-32 border-none md:mb-2 md:h-40 md:w-40"
+          ></iframe>
           {/* a component that appears when hovered on thumbnail */}
           <p className="absolute inset-0 flex items-center justify-center bg-gradient-to-b from-black to-gray-500 p-2 text-white opacity-0 hover:opacity-90">
             {assignment.members}
