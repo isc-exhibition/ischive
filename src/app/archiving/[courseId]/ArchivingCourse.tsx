@@ -12,77 +12,27 @@ import {
   AssignmentType,
 } from "@/api/fetch";
 import { courses } from "@/api/courses";
-import AssignmentsContainer from "@/components/AssignmentsContainer/AssignmentsContainer";
-import Layout from "@/components/Layout/Layout";
-import SemesterSelect from "@/components/SemesterSelect/SemesterSelect";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useState } from "react";
+import SemesterSelect from "@/components/SemesterSelect/SemesterSelect";
+import AssignmentsContainer from "@/components/AssignmentsContainer/AssignmentsContainer";
 
 export default function ArchivingCourse({
-  params,
+  courseInfo,
+  assignments,
 }: {
-  params: { courseId: string };
+  courseInfo: CourseInfoType;
+  assignments: AssignmentType[];
 }) {
-  // router const
   const router = useRouter();
 
-  // extract semesters from courses
   const semesters = Object.keys(courses).slice(1);
 
-  // extract courseId from slug
-  const courseId: number = parseInt(params.courseId);
-
-  // a semester selected by SemesterSelect
   const [selectedSemester, setSelectedSemester] = useState<string>("entire");
-  // courseInfo
-  const [courseInfo, setCourseInfo] = useState<CourseInfoType>({
-    courseId: 0,
-    track: "",
-    name: "",
-    professors: [],
-  });
-  // assignments
-  const [assignments, setAssignments] = useState<AssignmentType[]>([]);
-
-  // fetch courseInfo by using fetchCourseInfo function
-  useEffect(() => {
-    const fetchData = async () => {
-      const fetchedCourseInfo = await fetchCourseInfo(courseId);
-      setCourseInfo(fetchedCourseInfo);
-    };
-
-    fetchData();
-  }, [courseId]);
-
-  // fetch assignments by using fetchAssignments function
-  useEffect(() => {
-    const fetchData = async () => {
-      if (courseInfo.courseId != 0) {
-        const fetchedAssignments = await fetchAssignments(
-          courseInfo.courseId,
-          courseInfo.name,
-        );
-        setAssignments(fetchedAssignments);
-      }
-    };
-
-    fetchData();
-  }, [courseInfo]);
-
-  // if courseInfo is not loaded, return LOADING
-  if (courseInfo.courseId === 0) {
-    return (
-      <Layout>
-        <h2>LOADING...</h2>
-      </Layout>
-    );
-  }
 
   return (
-    <Layout>
-      {/* h1: COURSE */}
-      <h1>C0URSE</h1>
+    <>
       {/* SemesterSelect: filter semesters */}
       <div className="border-t-2 border-solid border-black">
         <SemesterSelect
@@ -111,7 +61,6 @@ export default function ArchivingCourse({
           onClick={() => router.back()}
         />
       </div>
-
       {/* div: a container for assignments */}
       <div className="border-t-2 border-solid border-black p-8 font-Pretendard md:p-10">
         {semesters
@@ -149,6 +98,6 @@ export default function ArchivingCourse({
             }
           })}
       </div>
-    </Layout>
+    </>
   );
 }
