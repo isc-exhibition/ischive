@@ -5,12 +5,7 @@ archiving/[courseId]/ArchivingCourse.tsx:
 
 "use client";
 
-import {
-  CourseInfoType,
-  fetchCourseInfo,
-  fetchAssignments,
-  AssignmentType,
-} from "@/api/fetch";
+import { CourseInfoType, AssignmentType } from "@/api/fetch";
 import { courses } from "@/api/courses";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
