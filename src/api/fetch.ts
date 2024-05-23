@@ -101,9 +101,12 @@ export async function fetchAssignments(courseId: number, courseName: string) {
         courseName: courseName,
         assignmentName: value[3],
         members: value[7],
-        thumbnail: `https://drive.google.com/file/d/${
+        thumbnail: `https://drive.usercontent.google.com/download?id=${
           value[5].split("=")[1]
-        }/preview`,
+        }`,
+        // thumbnail: `https://drive.google.com/file/d/${
+        //   value[5].split("=")[1]
+        // }/preview`,
         id: value[13],
       };
       assignments.push(assignment);

@@ -2,7 +2,7 @@
 AssignmentsContainer.tsx:
     A container that contains AssignmentButton
 */
-
+import Image from "next/image";
 import { AssignmentType } from "@/api/fetch";
 import Link from "next/link";
 
@@ -23,10 +23,16 @@ function AssignmentButton({ assignment }: { assignment: AssignmentType }) {
             blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mOUkBCrBwABXQDHIqKtmAAAAABJRU5ErkJggg=="
             className="mb-1 h-32 w-32 md:mb-2 md:h-40 md:w-40"
           /> */}
-          <iframe
+          <Image
+            src={assignment.thumbnail}
+            alt={`thumb-${assignment.id}`}
+            placeholder="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAFklEQVR42mN8//HLfwYiAOOoQvoqBAB  bWyZJf74GZgAAAABJRU5ErkJggg=="
+            fill
+          ></Image>
+          {/* <iframe
             src={assignment.thumbnail}
             className="mb-1 h-32 w-32 border-none md:mb-2 md:h-40 md:w-40"
-          ></iframe>
+          ></iframe> */}
           {/* a component that appears when hovered on thumbnail */}
           <p className="absolute inset-0 flex items-center justify-center bg-gradient-to-b from-black to-gray-500 p-2 text-white opacity-0 hover:opacity-90">
             {assignment.members}
