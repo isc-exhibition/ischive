@@ -233,9 +233,9 @@ export default function Main() {
   return (
     <Layout>
       <h2>서울대학교 정보문화학 연합전공</h2>
-
-      <div className=" border-t-2 border-solid border-black pt-6">
-        <div className="relative mx-auto max-w-screen-md ">
+      {/* header 52px이니까. 100vh - 52px로 해야함. */}
+      <div className=" h-[calc(100vh-88px)] border-t-2 border-solid border-black">
+        <div className="relative mx-auto flex h-full max-w-screen-md flex-col pt-6">
           <button
             aria-label="go to previous slide"
             onClick={handlePrevious}
@@ -250,12 +250,13 @@ export default function Main() {
           >
             <ChevronRightIcon className="h-5 w-5" />
           </button>
-          <div className="overflow-hidden" ref={emblaRef}>
-            <div className="flex">
+
+          <div className="flex flex-1 flex-col overflow-hidden" ref={emblaRef}>
+            <div className="flex flex-1">
               {slides.map((slide, index) => (
                 <div
                   key={index}
-                  className="mx-4 aspect-auto flex-[0_0_100%] "
+                  className="mx-4 flex aspect-auto flex-[0_0_100%] flex-col items-center"
                   style={{
                     transform: `scale(${tweenValues[index]?.scale || 1})`,
                     opacity: `${tweenValues[index]?.opacity || 1}`,
@@ -266,24 +267,21 @@ export default function Main() {
                     <h1>{slide.semester}</h1>
                     <h2>{slide.name}</h2>
                   </div>
-
-                  <div className="flex items-center justify-center align-middle">
+                  {/* <div className="md-[30vw] relative flex w-[40vw] flex-1 items-center justify-center align-middle xl:w-[20vw]"> */}
+                  <div className="relative w-[50vw] flex-1 sm:w-[40vw] md:w-[30vw] lg:w-[23vw] xl:w-[18vw]">
                     <Image
                       src={slide.url}
                       alt={slide.name}
-                      width={0}
-                      height={0}
-                      sizes="20vw"
+                      fill
+                      className="rounded-lg object-fill shadow-md"
+                      // sizes="20vw"
                       placeholder="blur"
                       blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mOUkBCrBwABXQDHIqKtmAAAAABJRU5ErkJggg=="
-                      className="w-[30vw] rounded-lg object-contain shadow-md"
                     />
                   </div>
-
-                  <div className="my-2 text-center">
+                  <div className="mt-4 text-center">
                     <h4>{slide.date}</h4>
                   </div>
-
                   <Link
                     href={slide.link}
                     target="_blank"
