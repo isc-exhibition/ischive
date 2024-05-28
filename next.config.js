@@ -3,6 +3,11 @@
  */
 
 const nextConfig = {
+  // logging: {
+  //   fetches: {
+  //     fullUrl: true,
+  //   },
+  // },
   // add drive.google.com to remotePatterns
   images: {
     remotePatterns: [
