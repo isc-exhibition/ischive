@@ -5,6 +5,7 @@ AssignmentsContainer.tsx:
 import Image from "next/image";
 import { AssignmentType } from "@/api/fetch";
 import Link from "next/link";
+import { loadingImageUrl } from "../../../public/assets/img/loadingImageUrl";
 
 function AssignmentButton({ assignment }: { assignment: AssignmentType }) {
   return (
@@ -26,7 +27,7 @@ function AssignmentButton({ assignment }: { assignment: AssignmentType }) {
           <Image
             src={assignment.thumbnail}
             alt={`thumb-${assignment.id}`}
-            placeholder="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAFklEQVR42mN8//HLfwYiAOOoQvoqBAB  bWyZJf74GZgAAAABJRU5ErkJggg=="
+            placeholder={loadingImageUrl}
             fill
           ></Image>
           {/* <iframe
