@@ -16,7 +16,7 @@ const numberWithinRange = (number: number, min: number, max: number) =>
   Math.min(Math.max(number, min), max);
 
 export default function Main() {
-  const [emblaRef, embla] = useEmblaCarousel({ loop: false });
+  const [emblaRef, embla] = useEmblaCarousel({ loop: true });
   const [tweenValues, setTweenValues] = useState<
     { scale: number; opacity: number }[]
   >([]);
