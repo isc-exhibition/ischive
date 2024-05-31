@@ -273,9 +273,7 @@ export default function Main() {
                       src={slide.url}
                       alt={slide.name}
                       fill
-                      // className="object-contain"
-                      className="rounded-lg object-fill shadow-md"
-                      // sizes="20vw"
+                      className="rounded-lg object-contain"
                       placeholder="blur"
                       blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mOUkBCrBwABXQDHIqKtmAAAAABJRU5ErkJggg=="
                     />
