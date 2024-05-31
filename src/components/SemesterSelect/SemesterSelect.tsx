@@ -45,7 +45,7 @@ export default function SemesterSelect({
       {isFocused && (
         <div
           className="appearnce-none absolute left-0 cursor-pointer bg-white"
-          style={{ top: "38px" }}
+          style={{ top: "38px", zIndex: 9999 }}
         >
           {parsedSemesters.map((semester, index) => (
             <div
