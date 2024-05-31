@@ -256,7 +256,7 @@ export default function Main() {
               {slides.map((slide, index) => (
                 <div
                   key={index}
-                  className="mx-4 flex aspect-auto flex-[0_0_100%] flex-col items-center"
+                  className="mx-4 box-border flex aspect-auto flex-[0_0_calc(100%-2rem)] flex-col items-center"
                   style={{
                     transform: `scale(${tweenValues[index]?.scale || 1})`,
                     opacity: `${tweenValues[index]?.opacity || 1}`,
@@ -268,13 +268,12 @@ export default function Main() {
                     <h2>{slide.name}</h2>
                   </div>
                   {/* <div className="md-[30vw] relative flex w-[40vw] flex-1 items-center justify-center align-middle xl:w-[20vw]"> */}
-                  <div className="relative w-[50vw] flex-1 sm:w-[40vw] md:w-[30vw] lg:w-[23vw] xl:w-[18vw]">
+                  <div className="relative aspect-[519/740] flex-1">
                     <Image
                       src={slide.url}
                       alt={slide.name}
                       fill
-                      className="rounded-lg object-fill shadow-md"
-                      // sizes="20vw"
+                      className="rounded-lg object-contain"
                       placeholder="blur"
                       blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mOUkBCrBwABXQDHIqKtmAAAAABJRU5ErkJggg=="
                     />
