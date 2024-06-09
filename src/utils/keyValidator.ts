@@ -1,5 +1,5 @@
 // check if the key is in the object else return the default key
-const hasKeyinObj = <T>(
+const keyValidator = <T>(
   key: string | null,
   checkObj: T extends Object ? T : never,
   defaultKey: keyof T,
@@ -7,4 +7,4 @@ const hasKeyinObj = <T>(
   return key && key in checkObj ? (key as keyof T) : defaultKey;
 };
 
-export default hasKeyinObj;
+export default keyValidator;

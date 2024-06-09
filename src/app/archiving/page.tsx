@@ -12,7 +12,7 @@ import { courses, CoursesKey, CoursesType } from "../../api/courses";
 import { useEffect, useState } from "react";
 import CoursesContainer from "@/components/CoursesContainer/CoursesContainer";
 import { useRouter, useSearchParams } from "next/navigation";
-import hasKeyinObj from "@/utils/hasKeyinObj";
+import keyValidator from "@/utils/keyValidator";
 
 export default function Archiving() {
   const params = useSearchParams();
@@ -22,7 +22,7 @@ export default function Archiving() {
 
   const [selectedSemester, setSelectedSemester] = useState<CoursesKey>(
     // if semesterQuery is in courses, return semesterQuery. else return "entire"
-    hasKeyinObj(semesterQuery, courses, "entire"),
+    keyValidator(semesterQuery, courses, "entire"),
   );
 
   const selectedCourses = courses[selectedSemester];
