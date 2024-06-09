@@ -8,15 +8,28 @@ archiving/page.tsx:
 
 import Layout from "@/components/Layout/Layout";
 import SemesterSelect from "@/components/SemesterSelect/SemesterSelect";
-import { courses, TrackType } from "../../api/courses";
-import { useState } from "react";
+import { courses, CoursesKey, CoursesType } from "../../api/courses";
+import { useEffect, useState } from "react";
 import CoursesContainer from "@/components/CoursesContainer/CoursesContainer";
+import { useRouter, useSearchParams } from "next/navigation";
+import hasKeyinObj from "@/utils/hasKeyinObj";
 
 export default function Archiving() {
-  const [selectedSemester, setSelectedSemester] = useState<string>("entire");
-  const [selectedCourses, setSelectedCourses] = useState<TrackType>(
-    courses["entire"],
+  const params = useSearchParams();
+  const router = useRouter();
+
+  const semesterQuery = params.get("semester");
+
+  const [selectedSemester, setSelectedSemester] = useState<CoursesKey>(
+    // if semesterQuery is in courses, return semesterQuery. else return "entire"
+    hasKeyinObj(semesterQuery, courses, "entire"),
   );
+
+  const selectedCourses = courses[selectedSemester];
+
+  useEffect(() => {
+    router.replace(`/archiving?semester=${selectedSemester}`);
+  }, [selectedSemester]);
 
   return (
     <Layout>
@@ -25,10 +38,10 @@ export default function Archiving() {
       {/* SemesterSelect: dropdown select box */}
       <div className="border-t-2 border-solid border-black">
         <SemesterSelect
+          selectedSemester={selectedSemester}
           /* set selectedSemester and selectedCourses to the changed value */
           onSelectionChange={(value) => {
             setSelectedSemester(value);
-            setSelectedCourses(courses[value]);
           }}
         />
       </div>
