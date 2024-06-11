@@ -10,10 +10,31 @@ import { useEffect, useRef, useState, useCallback } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import "./progressbar.css";
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/solid";
+import { courses } from "@/api/courses";
 const TWEEN_FACTOR = 3;
 
 const numberWithinRange = (number: number, min: number, max: number) =>
   Math.min(Math.max(number, min), max);
+
+const renderSlideLink = (semester: string, snsLink: string) => {
+  const link = `/archiving?semester=${semester}`;
+
+  return semester in courses ? (
+    <Link href={link} rel="noopener noreferrer">
+      <button className="relative mx-auto mt-3 block h-10 overflow-hidden border border-[#FF5C00] text-[#FF5C00] transition-all duration-200 before:absolute before:bottom-0 before:left-0 before:right-0 before:top-0 before:m-auto before:h-0 before:w-0 before:rounded-sm before:bg-[#FF5C00] before:duration-300 before:ease-out hover:text-white hover:before:h-40 hover:before:w-[100%] hover:before:opacity-80">
+        <span className="relative z-10 px-4 py-1 font-MonoplexWideNerd font-semibold">
+          보러가기
+        </span>
+      </button>
+    </Link>
+  ) : (
+    <Link href={snsLink} target="_blank" rel="noopener noreferrer">
+      <div className="relative mx-auto mt-3 block h-10 w-10 overflow-hidden">
+        <Image src="/assets/img/instagram.png" fill alt="instagram" />
+      </div>
+    </Link>
+  );
+};
 
 export default function Main() {
   const [emblaRef, embla] = useEmblaCarousel({ loop: true });
@@ -157,6 +178,7 @@ export default function Main() {
       url: "/assets/img/poster/poster13_2.png",
     },
   ];
+
   const handlePrevious = () => {
     embla?.scrollPrev();
   };
@@ -281,17 +303,7 @@ export default function Main() {
                   <div className="mt-4 text-center">
                     <h4>{slide.date}</h4>
                   </div>
-                  <Link
-                    href={slide.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <button className="relative mx-auto mt-3 block h-10 overflow-hidden border border-[#FF5C00] text-[#FF5C00] transition-all duration-200 before:absolute before:bottom-0 before:left-0 before:right-0 before:top-0 before:m-auto before:h-0 before:w-0 before:rounded-sm before:bg-[#FF5C00] before:duration-300 before:ease-out hover:text-white hover:before:h-40 hover:before:w-[100%] hover:before:opacity-80">
-                      <span className="relative z-10 px-4 py-1 font-MonoplexWideNerd font-semibold">
-                        보러가기
-                      </span>
-                    </button>
-                  </Link>
+                  {renderSlideLink(slide.semester, slide.link)}
                 </div>
               ))}
             </div>

@@ -9,6 +9,7 @@ api/courses.ts:
 The things that must be updated manually every semester:
   Coursestype,
   courses
+  SemesterName
 */
 
 export const getSemesterName = (semester: CoursesKey) => {
