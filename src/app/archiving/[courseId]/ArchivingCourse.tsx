@@ -6,7 +6,7 @@ archiving/[courseId]/ArchivingCourse.tsx:
 "use client";
 
 import { CourseInfoType, AssignmentType } from "@/api/fetch";
-import { courses } from "@/api/courses";
+import { CoursesKey, courses } from "@/api/courses";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
@@ -16,15 +16,18 @@ import AssignmentsContainer from "@/components/AssignmentsContainer/AssignmentsC
 export default function ArchivingCourse({
   courseInfo,
   assignments,
+  initialSemester,
 }: {
   courseInfo: CourseInfoType;
   assignments: AssignmentType[];
+  initialSemester: CoursesKey;
 }) {
   const router = useRouter();
 
   const semesters = Object.keys(courses).slice(1);
 
-  const [selectedSemester, setSelectedSemester] = useState<string>("entire");
+  const [selectedSemester, setSelectedSemester] =
+    useState<CoursesKey>(initialSemester);
 
   // 학기별 과제물을 렌더링하는 함수(템플릿)
   const renderSemesterInfo = (
@@ -50,6 +53,7 @@ export default function ArchivingCourse({
       {/* SemesterSelect: filter semesters */}
       <div className="border-t-2 border-solid border-black">
         <SemesterSelect
+          selectedSemester={selectedSemester}
           onSelectionChange={(value) => setSelectedSemester(value)}
         />
       </div>

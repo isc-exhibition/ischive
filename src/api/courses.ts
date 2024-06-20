@@ -9,11 +9,27 @@ api/courses.ts:
 The things that must be updated manually every semester:
   Coursestype,
   courses
+  SemesterName
 */
+
+export const getSemesterName = (semester: CoursesKey) => {
+  return SemesterName[semester];
+};
+
+// 각 학기 이름을 자유롭게 설정할 수 있는 enum 역할을 수행.
+// SemesterName key should be the same as CoursesKey
+const SemesterName: Record<CoursesKey, string> = {
+  entire: "전체 학기" as const,
+  "2023-2": "2023-2" as const,
+  "2023-1": "2023-1" as const,
+  "2022-2": "2022-2" as const,
+  "2022-1": "2022-1" as const,
+};
+
+export type CoursesKey = keyof CoursesType;
 
 // CoursesType: a type for 'courses'
 export type CoursesType = {
-  [index: string]: TrackType;
   entire: TrackType;
   "2023-2": TrackType;
   "2023-1": TrackType;
