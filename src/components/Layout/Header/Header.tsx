@@ -38,23 +38,23 @@ export default function Header() {
           >
             <Link href="/">HOME</Link>
           </div>
-          {/* ABOUT */}
-          <div
-            className={`pl-2 text-xl sm:pl-4 sm:text-2xl ${
-              pathname.includes("/about") ? "text-[#FF5C00]" : ""
-            }`}
-          >
-            <Link href="/about">ABOUT</Link>
-          </div>
           {/* ARCHIVING */}
           <div
-            className={`px-2 text-xl sm:px-4 sm:text-2xl ${
+            className={`pl-2 text-xl sm:pl-4 sm:text-2xl ${
               pathname.includes("/archiving") || pathname.includes("assignment")
                 ? "text-[#FF5C00]"
                 : ""
             }`}
           >
             <Link href="/archiving">ARCHIVING</Link>
+          </div>
+          {/* ABOUT */}
+          <div
+            className={`px-2 text-xl sm:px-4 sm:text-2xl ${
+              pathname.includes("/about") ? "text-[#FF5C00]" : ""
+            }`}
+          >
+            <Link href="/about">ABOUT</Link>
           </div>
         </div>
       </div>
