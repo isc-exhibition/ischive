@@ -45,6 +45,13 @@ export default function Main() {
 
   const slides = [
     {
+      semester: "2024-1",
+      name: "이공이사 정문이사",
+      date: "2024.06.20(목) ~ 2024.06.21(금)",
+      link: "https://www.instagram.com/p/C73y2p5y1bs/",
+      url: "/assets/img/poster/poster24_1.png",
+    },
+    {
       semester: "2023-2",
       name: "ChrISCmas",
       date: "2023.12.21(목) ~ 2023.12.22(금)",

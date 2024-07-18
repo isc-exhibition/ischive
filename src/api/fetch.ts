@@ -104,6 +104,11 @@ export async function fetchAssignments(courseId: number, courseName: string) {
   // Save assignments of the course into assignments
   values.forEach((value: any) => {
     if (value[2] === courseName) {
+      const thumbnail = value[5].split("=")[1]
+        ? `https://drive.usercontent.google.com/download?id=${
+            value[5].split("=")[1]
+          }`
+        : "/assets/img/thumbnail_placeholder.png";
       const assignment: AssignmentType = {
         year: parseInt(value[1].slice(0, 4)),
         semester: parseInt(value[1][8]),
@@ -111,9 +116,7 @@ export async function fetchAssignments(courseId: number, courseName: string) {
         courseName: courseName,
         assignmentName: value[3],
         members: value[7],
-        thumbnail: `https://drive.usercontent.google.com/download?id=${
-          value[5].split("=")[1]
-        }`,
+        thumbnail: thumbnail,
         // thumbnail: `https://drive.google.com/file/d/${
         //   value[5].split("=")[1]
         // }/preview`,

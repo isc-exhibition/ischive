@@ -20,6 +20,7 @@ export const getSemesterName = (semester: CoursesKey) => {
 // SemesterName key should be the same as CoursesKey
 const SemesterName: Record<CoursesKey, string> = {
   entire: "전체 학기" as const,
+  "2024-1": "2024-1" as const,
   "2023-2": "2023-2" as const,
   "2023-1": "2023-1" as const,
   "2022-2": "2022-2" as const,
@@ -31,6 +32,7 @@ export type CoursesKey = keyof CoursesType;
 // CoursesType: a type for 'courses'
 export type CoursesType = {
   entire: TrackType;
+  "2024-1": TrackType;
   "2023-2": TrackType;
   "2023-1": TrackType;
   "2022-2": TrackType;
@@ -104,6 +106,28 @@ export const courses: CoursesType = {
       { name: "산학연구실습", courseId: 25 },
       { name: "창의연구실습", courseId: 26 },
     ],
+  },
+  "2024-1": {
+    hci: [
+      { name: "HCI 이론 및 실습", courseId: 1 },
+      { name: "디지털 에쓰노그래피", courseId: 3 },
+      { name: "디자인 사고와 커뮤니케이션", courseId: 5 },
+    ],
+    mediaContents: [
+      { name: "영상문화입문", courseId: 6 },
+      { name: "디지털영상실습1", courseId: 7 },
+      { name: "디지털 음향의 이해", courseId: 9 },
+      { name: "디지털 미디어의 이해", courseId: 11 },
+      { name: "게임의 이해", courseId: 13 },
+      { name: "문화컨텐츠의 이해", courseId: 16 },
+      { name: "미래뉴스실습1", courseId: 27 },
+    ],
+    technology: [
+      { name: "정보문화기술입문", courseId: 18 },
+      { name: "웹프로그래밍개론", courseId: 23 },
+      { name: "비주얼라이제이션", courseId: 24 },
+    ],
+    project: [{ name: "창의연구실습", courseId: 26 }],
   },
   "2023-2": {
     hci: [
