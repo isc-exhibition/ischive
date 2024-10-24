@@ -1,8 +1,4 @@
-/* 
-CoursesContainer.tsx:
-  A container that contains CourseButtons
-*/
-
+import React, { Suspense } from "react";
 import { CourseType, courses } from "@/api/courses";
 import keyValidator from "@/utils/keyValidator";
 import Link from "next/link";
@@ -35,7 +31,11 @@ export default function CoursesContainer({
 }: {
   courses: Array<CourseType>;
 }) {
-  return courses.map((item) => (
-    <CourseButton course={item} key={item.courseId} />
-  ));
+  return (
+    <Suspense fallback={null}>
+      {courses.map((item) => (
+        <CourseButton course={item} key={item.courseId} />
+      ))}
+    </Suspense>
+  );
 }
