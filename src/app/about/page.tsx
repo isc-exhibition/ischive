@@ -5,7 +5,7 @@ about/page.tsx:
 
 import Image from "next/image";
 import Layout from "@/components/Layout/Layout";
-import ProfileContainer from "@/components/ProfileContainer/ProfileContainer";
+import { ProfileContainer, DeveloperProfileContainer } from "@/components/ProfileContainer/ProfileContainer";
 import { managers, designers, developers } from "@/api/members";
 
 export default function About() {
@@ -133,7 +133,7 @@ export default function About() {
       <div className="border-t-2 border-solid border-black">
         <div className="mx-5 flex flex-row flex-wrap">
           {developers.map((item) => (
-            <ProfileContainer
+            <DeveloperProfileContainer
               team={item.team}
               isHead={item.isHead}
               major={item.major}
@@ -141,6 +141,7 @@ export default function About() {
               account={item.account}
               id={item.id}
               key={item.id}
+              period={item.period}
             />
           ))}
         </div>
