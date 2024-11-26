@@ -67,7 +67,7 @@ export function DeveloperProfileContainer({
   name: string;
   account: string;
   id: number;
-  period: string;
+  period?: string;
 }) {
   return (
     <div className="my-6">
