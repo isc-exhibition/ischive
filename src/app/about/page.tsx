@@ -141,7 +141,6 @@ export default function About() {
               account={item.account}
               id={item.id}
               key={item.id}
-              period={item.period}
             />
           ))}
         </div>

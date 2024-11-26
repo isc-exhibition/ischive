@@ -13,7 +13,6 @@ export default function ProfileContainer({
   name,
   account,
   id,
-  period,
 }: {
   team: string;
   isHead: boolean;
@@ -21,7 +20,6 @@ export default function ProfileContainer({
   name: string;
   account: string;
   id: number;
-  period?: string;
 }) {
   return (
     <div className="my-6">
@@ -40,8 +38,6 @@ export default function ProfileContainer({
       }`}</div>
       {/* major and name */}
       <div className="text-center font-Pretendard">{`${major} ${name}`}</div>
-      {/* period */}
-      {period && (<div className="text-center font-Pretendard text-sm text-gray-500">{period}</div>)}
       {/* instagram or email account */}
       <div className="text-center font-Pretendard text-[#FF5C00]">
         {account}
