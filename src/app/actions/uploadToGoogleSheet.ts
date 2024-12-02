@@ -18,8 +18,14 @@ export async function uploadToGoogleSheet(formData: FormData) {
   // 폼 제출을 받을 탭 이름과 셀 범위를 지정합니다.
   const RANGE = "FormSubmittedAssignments(test)!A:N";
 
+  console.log(formData);
+
   const formValues = [
-    [formData.get("name"), formData.get("email"), formData.get("message")],
+    [
+      formData.get("name"),
+      formData.get("email"),
+      formData.get("thumbnailLink"),
+    ],
   ];
 
   try {
