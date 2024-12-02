@@ -127,14 +127,23 @@ export default function FormPage() {
   };
 
   return (
-    <div>
-      <h1>Form</h1>
-      <form onSubmit={handleSubmit}>
-        <h2>과제 정보 입력</h2>
+    <div className="flex flex-col gap-5 p-10">
+      <h1 className="m-0 text-2xl tracking-tighter lg:text-5xl">
+        2024-2 과제 수합용 페이지
+      </h1>
+      <p className="font-Pretendard">소개 텍스트 (WIP)</p>
+      <form
+        className="flex flex-col gap-5 font-Pretendard"
+        onSubmit={handleSubmit}
+      >
+        <h2 className="m-0 text-xl lg:text-3xl">과제 정보 입력</h2>
 
-        <label className="mb-2 block">
-          과목명
-          <select className="block" name="subject">
+        <label className="flex flex-col gap-2">
+          <h3 className="m-0 text-lg lg:text-xl">과목명(필수)</h3>
+          <select
+            className="block rounded-sm border-2 border-black p-2"
+            name="subject"
+          >
             <option value="정보문화기술입문">정보문화기술입문</option>
             <option value="언론정보문화특강">언론정보문화특강</option>
             <option value="HCI 이론 및 실습">HCI 이론 및 실습</option>
@@ -152,13 +161,13 @@ export default function FormPage() {
           </select>
         </label>
 
-        <label className="mb-2 block">
-          과제명
+        <label className="flex flex-col gap-2">
+          <h3 className="m-0 text-lg lg:text-xl">과제명(필수)</h3>
           <input name="name" className="w-full rounded border p-2" required />
         </label>
 
-        <label className="mb-2 block">
-          대표 연락처
+        <label className="flex flex-col gap-2">
+          <h3 className="m-0 text-lg lg:text-xl">대표 연락처(필수)</h3>
           <input
             placeholder="ex) 010-0000-0000"
             name="phone"
@@ -167,8 +176,8 @@ export default function FormPage() {
           />
         </label>
 
-        <label className="mb-2 block">
-          대표 이메일
+        <label className="flex flex-col gap-2">
+          <h3 className="m-0 text-lg lg:text-xl">대표 이메일(필수)</h3>
           <input
             placeholder="ex) iscexhibition@gmail.com"
             name="email"
@@ -178,85 +187,92 @@ export default function FormPage() {
           />
         </label>
 
-        <label className="mb-2 block">
-          과제 설명 (공백 포함 200자[소형] / 100자[초소형] 내외) <br />{" "}
-          자신/자신의 팀 과제를 설명해주세요! 과제전의 메인 테마와 어울리게
-          설명해주시면 더 좋아요📦 <br />
-          과제전의 메인 테마: ⟪이공이사 정문이사⟫ (소형 판넬 공백 포함 200자,
-          줄바꿈 X)
+        <label className="flex flex-col gap-2">
+          <h3 className="m-0 text-lg lg:text-xl">과제 설명(필수)</h3>
+          <p>description (WIP)</p>
           <textarea name="description" className="w-full rounded border p-2" />
         </label>
 
         {/* 참가자 정보 */}
-        <table>
-          <thead>
-            <tr>
-              <th>이름</th>
-              <th>역할</th>
-              <th>인스타그램</th>
-              <th>이메일</th>
-              <th>Actions</th>
-            </tr>
-          </thead>
-          <tbody>
-            {members.map((member, index) => (
-              <tr key={index}>
-                <td>
-                  <input
-                    name={`members[${index}][name]`}
-                    type="text"
-                    value={member.name}
-                    onChange={(e) =>
-                      handleMemberChange(index, "name", e.target.value)
-                    }
-                  />
-                </td>
-                <td>
-                  <input
-                    name={`members[${index}][role]`}
-                    type="text"
-                    value={member.role}
-                    onChange={(e) =>
-                      handleMemberChange(index, "role", e.target.value)
-                    }
-                  />
-                </td>
-                <td>
-                  <input
-                    name={`members[${index}][instagram]`}
-                    type="text"
-                    value={member.instagram}
-                    onChange={(e) =>
-                      handleMemberChange(index, "instagram", e.target.value)
-                    }
-                  />
-                </td>
-                <td>
-                  <input
-                    name={`members[${index}][email]`}
-                    type="text"
-                    value={member.email}
-                    onChange={(e) =>
-                      handleMemberChange(index, "email", e.target.value)
-                    }
-                  />
-                </td>
-                <td>
-                  <button type="button" onClick={() => removeMembers(index)}>
-                    Remove
-                  </button>
-                </td>
+        <label className="flex flex-col gap-2">
+          <h3 className="m-0 text-lg lg:text-xl">참가자 정보</h3>
+          <table className="w-full table-fixed">
+            <thead>
+              <tr>
+                <th className="px-4 py-2">이름</th>
+                <th className="px-4 py-2">역할</th>
+                <th className="px-4 py-2">인스타그램</th>
+                <th className="px-4 py-2">이메일</th>
+                <th className="px-4 py-2">Actions</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
-        <button type="button" onClick={addMembers}>
-          Add members
-        </button>
+            </thead>
+            <tbody>
+              {members.map((member, index) => (
+                <tr key={index}>
+                  <td className="border px-4 py-2">
+                    <input
+                      className="w-full text-sm focus:outline-none"
+                      name={`members[${index}][name]`}
+                      type="text"
+                      value={member.name}
+                      onChange={(e) =>
+                        handleMemberChange(index, "name", e.target.value)
+                      }
+                      placeholder="ex) 홍길동"
+                    />
+                  </td>
+                  <td className="border px-4 py-2">
+                    <input
+                      className="w-full text-sm focus:outline-none"
+                      name={`members[${index}][role]`}
+                      type="text"
+                      value={member.role}
+                      onChange={(e) =>
+                        handleMemberChange(index, "role", e.target.value)
+                      }
+                    />
+                  </td>
+                  <td className="border px-4 py-2">
+                    <input
+                      className="w-full text-sm focus:outline-none"
+                      name={`members[${index}][instagram]`}
+                      type="text"
+                      value={member.instagram}
+                      onChange={(e) =>
+                        handleMemberChange(index, "instagram", e.target.value)
+                      }
+                    />
+                  </td>
+                  <td className="border px-4 py-2">
+                    <input
+                      className="w-full text-sm focus:outline-none"
+                      name={`members[${index}][email]`}
+                      type="text"
+                      value={member.email}
+                      onChange={(e) =>
+                        handleMemberChange(index, "email", e.target.value)
+                      }
+                    />
+                  </td>
+                  <td className="border px-4 py-2">
+                    <button type="button" onClick={() => removeMembers(index)}>
+                      Remove
+                    </button>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+          <button type="button" onClick={addMembers}>
+            Add members
+          </button>
+        </label>
+
+        <h2 className="m-0 text-xl lg:text-3xl">과제 파일 및 썸네일 제출</h2>
 
         {/* 썸네일 업로드 */}
         <label className="mb-4 block">
-          <h2>썸네일 업로드</h2>
+          <h3 className="m-0 text-lg lg:text-xl">썸네일 업로드(필수)</h3>
           <input
             name="thumbnail"
             type="file"
@@ -268,7 +284,7 @@ export default function FormPage() {
 
         {/* 과제물 파일 업로드 */}
         <label className="mb-4 block">
-          <h2>과제물 파일 업로드</h2>
+          <h3 className="m-0 text-lg lg:text-xl">과제물 파일 업로드</h3>
           <input
             name="assignmentFile"
             type="file"
