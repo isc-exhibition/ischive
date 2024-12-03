@@ -346,7 +346,7 @@ export default function FormPage() {
         <h2 className="m-0 text-xl lg:text-3xl">과제 파일 및 썸네일 제출</h2>
 
         {/* 썸네일 업로드 */}
-        <label className="mb-4 block">
+        <label className="flex flex-col gap-2">
           <h3 className="m-0 text-lg lg:text-xl">썸네일 업로드(필수)</h3>
           <input
             name="thumbnail"
@@ -358,7 +358,7 @@ export default function FormPage() {
         </label>
 
         {/* 과제물 파일 업로드 */}
-        <label className="mb-4 block">
+        <label className="flex flex-col gap-2">
           <h3 className="m-0 text-lg lg:text-xl">과제물 파일 업로드</h3>
           <input
             name="assignmentFile"
