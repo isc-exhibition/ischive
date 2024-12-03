@@ -11,6 +11,17 @@ export default function FormPage() {
   // 과제물 파일을 관리하기 위한 useState
   const [assignmentFile, setAssignmentFile] = useState<File | null>(null);
 
+  // 기타 필요 기기를 위한 useState
+  const [customDevice, setCustomDevice] = useState("");
+  const [isCustomChecked, setIsCustomChecked] = useState(false);
+
+  const handleCustomCheck = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setIsCustomChecked(e.target.checked);
+    if (!e.target.checked) {
+      setCustomDevice(""); // 체크 해제 시 값 초기화
+    }
+  };
+
   // 썸네일을 선택할 때의 이벤트 핸들러
   const handleThumbnailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files && e.target.files[0]) {
@@ -99,6 +110,13 @@ export default function FormPage() {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
 
+    // 제출 시간 추가
+    const currentTime = new Date().toISOString();
+    formData.append("submittedAt", currentTime);
+
+    // 수강학기 추가(상수)
+    formData.append("semester", "2024학년 2학기");
+
     // 썸네일 업로드
     const thumbnailLink = await handleThumbnailUpload(formData);
     if (thumbnailLink) {
@@ -138,6 +156,7 @@ export default function FormPage() {
       >
         <h2 className="m-0 text-xl lg:text-3xl">과제 정보 입력</h2>
 
+        {/* 과목명 */}
         <label className="flex flex-col gap-2">
           <h3 className="m-0 text-lg lg:text-xl">과목명(필수)</h3>
           <select
@@ -161,11 +180,13 @@ export default function FormPage() {
           </select>
         </label>
 
+        {/* 과제명 */}
         <label className="flex flex-col gap-2">
           <h3 className="m-0 text-lg lg:text-xl">과제명(필수)</h3>
           <input name="name" className="w-full rounded border p-2" required />
         </label>
 
+        {/* 대표자 연락처 */}
         <label className="flex flex-col gap-2">
           <h3 className="m-0 text-lg lg:text-xl">대표 연락처(필수)</h3>
           <input
@@ -176,6 +197,7 @@ export default function FormPage() {
           />
         </label>
 
+        {/* 대표자 이메일 */}
         <label className="flex flex-col gap-2">
           <h3 className="m-0 text-lg lg:text-xl">대표 이메일(필수)</h3>
           <input
@@ -187,6 +209,7 @@ export default function FormPage() {
           />
         </label>
 
+        {/* 과제 설명 */}
         <label className="flex flex-col gap-2">
           <h3 className="m-0 text-lg lg:text-xl">과제 설명(필수)</h3>
           <p>description (WIP)</p>
@@ -268,6 +291,58 @@ export default function FormPage() {
           </button>
         </label>
 
+        {/* 과제전 전시용 필요 기기 */}
+        <div className="flex flex-col gap-2">
+          <h3 className="m-0 text-lg lg:text-xl">과제전 전시용 필요 기기</h3>
+          <p>과제전 전시에 있어서 필요한 모든 기기를 선택해주세요</p>
+          <div className="flex items-center gap-2">
+            <input type="checkbox" name="devices" value="없음" id="none" />
+            <label htmlFor="none">없음(포스터)</label>
+          </div>
+          <div className="flex items-center gap-2">
+            <input type="checkbox" name="devices" value="아이맥" id="imac" />
+            <label htmlFor="imac">아이맥</label>
+          </div>
+          <div className="flex items-center gap-2">
+            <input type="checkbox" name="devices" value="마우스" id="mouse" />
+            <label htmlFor="mouse">마우스</label>
+          </div>
+          <div className="flex items-center gap-2">
+            <input
+              type="checkbox"
+              name="devices"
+              value="키보드"
+              id="keyboard"
+            />
+            <label htmlFor="keyboard">키보드</label>
+          </div>
+          <div className="flex items-center gap-2">
+            <input type="checkbox" name="devices" value="웹캠" id="webcam" />
+            <label htmlFor="webcam">웹캠</label>
+          </div>
+          <div className="flex items-center gap-2">
+            <input
+              type="checkbox"
+              name="devices"
+              value={customDevice}
+              id="misc"
+              checked={isCustomChecked}
+              onChange={handleCustomCheck}
+            />
+            <label htmlFor="misc">기타</label>
+            {isCustomChecked && (
+              <input
+                type="text"
+                name="customDevice"
+                value={customDevice}
+                onChange={(e) => setCustomDevice(e.target.value)}
+                placeholder="기기를 입력하세요"
+                className="ml-2 p-1"
+              />
+            )}
+          </div>
+        </div>
+
         <h2 className="m-0 text-xl lg:text-3xl">과제 파일 및 썸네일 제출</h2>
 
         {/* 썸네일 업로드 */}
@@ -293,6 +368,12 @@ export default function FormPage() {
           />
         </label>
 
+        {/* 과제물 링크 업로드 */}
+        <label className="flex flex-col gap-2">
+          <h3 className="m-0 text-lg lg:text-xl">과제 링크</h3>
+          <input name="assignmentLink" className="w-full rounded border p-2" />
+        </label>
+
         {/* Submit 버튼 */}
         <button
           type="submit"
@@ -302,25 +383,6 @@ export default function FormPage() {
         </button>
       </form>
       {formStatus && <p className="mt-4">{formStatus}</p>}
-
-      {/* <div>
-        <h1>파일 업로드</h1>
-        <input
-          type="file"
-          accept=".png,.jpg,.jpeg,.pdf,.mp4"
-          onChange={handleFileChange}
-        />
-        <button onClick={handleFileUpload}>파일 업로드</button>
-        {uploadStatus && <p>{uploadStatus}</p>}
-        {thumbnailLink && (
-          <p>
-            썸네일 링크:{" "}
-            <a href={thumbnailLink} target="_blank" rel="noopener noreferrer">
-              {thumbnailLink}
-            </a>
-          </p>
-        )}
-      </div> */}
     </div>
   );
 }
