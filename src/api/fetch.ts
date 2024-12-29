@@ -108,7 +108,7 @@ export async function fetchAssignments(courseId: number, courseName: string) {
         ? `https://drive.usercontent.google.com/download?id=${
             value[5].split("=")[1]
           }`
-        : "/assets/img/thumbnail_placeholder.png";
+        : `/assets/img/placeholder/${Math.ceil(Math.random() * 4)}.png`;
       const assignment: AssignmentType = {
         year: parseInt(value[1].slice(0, 4)),
         semester: parseInt(value[1][8]),
