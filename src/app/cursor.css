@@ -1,9 +1,0 @@
-/* default-cursor: for every page */
-.default-cursor {
-  cursor: url('/assets/cursor/default.cur'), auto;
-}
-
-/* mouse-cursor: only for 2024-2 poster-hover & page */
-.mouse-cursor {
-  cursor: url('/assets/cursor/mouse.cur'), help;
-}

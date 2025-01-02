@@ -267,6 +267,12 @@ export default function Main() {
     );
   };
 
+  // const handlePosterClick = (_semester: string, _eventlog: boolean) => {
+  //   if (_eventlog) {
+  //     window.location.href = `eventlog/${_semester}`;
+  //   }
+  // };
+
   return (
     <Layout>
       <h2>서울대학교 정보문화학 연합전공</h2>
@@ -300,27 +306,28 @@ export default function Main() {
                     transition: "transform 0.3s, opacity 0.3s",
                   }}
                 >
-                  {/* 2024-2의 경우에만 마우스 커서 mouse-cursor로 적용 */}
-                  <div className={`my-2 text-center ${slide.semester == '2024-2'?'mouse-cursor':''}`}>
+                  {/* 2024-2의 경우에만 마우스 커서 cursor-mouse 적용 */}
+                  <div className={`my-2 text-center ${slide.semester == '2024-2'?'cursor-mouse':''}`}>
                     <h1>{slide.semester}</h1>
                     <h2>{slide.name}</h2>
                   </div>
                   {/* <div className="md-[30vw] relative flex w-[40vw] flex-1 items-center justify-center align-middle xl:w-[20vw]"> */}
                   
-                  {/* 2024-2의 경우에만 마우스 커서 mouse-cursor로 적용 */}
-                  <div className={`relative aspect-[519/740] flex-1 ${slide.semester == '2024-2'?'mouse-cursor':''}`}>
+                  {/* 2024-2의 경우에만 마우스 커서 cursor-mouse로 적용 */}
+                  <div className={`relative aspect-[519/740] flex-1 ${slide.semester == '2024-2'?'cursor-mouse':''}`}>
                     <Image
                       src={slide.url}
                       alt={slide.name}
                       fill
                       className="rounded-lg object-contain"
                       placeholder="blur"
+                      // onClick={() => handlePosterClick(slide.semester, slide.eventlog)}
                       blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mOUkBCrBwABXQDHIqKtmAAAAABJRU5ErkJggg=="
                     />
                   </div>
 
-                  {/* 2024-2의 경우에만 마우스 커서 mouse-cursor로 적용 */}
-                  <div className={`mt-4 text-center ${slide.semester == '2024-2'?'mouse-cursor':''}`}>
+                  {/* 2024-2의 경우에만 마우스 커서 cursor-mouse로 적용 */}
+                  <div className={`mt-4 text-center ${slide.semester == '2024-2'?'cursor-mouse':''}`}>
                     <h4>{slide.date}</h4>
                   </div>
                   {renderSlideLink(slide.semester, slide.link)}
