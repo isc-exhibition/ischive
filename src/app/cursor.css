@@ -1,9 +1,10 @@
-/* default-cursor: for every page */
-.default-cursor {
-  cursor: url('/assets/cursor/default.cur'), auto;
-}
-
-/* mouse-cursor: only for 2024-2 poster-hover & page */
-.mouse-cursor {
-  cursor: url('/assets/cursor/mouse.cur'), help;
+/*tailwind.config.ts 에 해당 내용 작성 */
+theme: {
+  extend: {
+    /* ... */
+    cursor: {
+      default: "url('/assets/cursor/default.cur'), auto",
+      mouse: "url('assets/cursor/mouse.cur'), help",
+    },
+  }
 }
