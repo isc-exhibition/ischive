@@ -11,6 +11,7 @@ import useEmblaCarousel from "embla-carousel-react";
 import "./progressbar.css";
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/solid";
 import { courses } from "@/api/courses";
+
 const TWEEN_FACTOR = 3;
 
 const numberWithinRange = (number: number, min: number, max: number) =>
@@ -44,6 +45,13 @@ export default function Main() {
   const [selectedIndex, setSelectedIndex] = useState(0); // State to track the current slide index
 
   const slides = [
+    {
+      semester: "2024-2",
+      name: "디지털 흔적기관",
+      date: "2024.12.19(목) ~ 2024.12.20(금)",
+      link: "https://www.instagram.com/p/DDWzcGKyw3e/",
+      url: "/assets/img/poster/poster24_2.png",
+    },
     {
       semester: "2024-1",
       name: "이공이사 정문이사",
@@ -263,7 +271,7 @@ export default function Main() {
     <Layout>
       <h2>서울대학교 정보문화학 연합전공</h2>
       {/* header 52px이니까. 100vh - 52px로 해야함. */}
-      <div className=" h-[calc(100vh-88px)] border-t-2 border-solid border-black">
+      <div className="h-[calc(100vh-88px)] border-t-2 border-solid border-black">
         <div className="relative mx-auto flex h-full max-w-screen-md flex-col pt-6">
           <button
             aria-label="go to previous slide"
@@ -292,12 +300,15 @@ export default function Main() {
                     transition: "transform 0.3s, opacity 0.3s",
                   }}
                 >
-                  <div className="my-2 text-center">
+                  {/* 2024-2의 경우에만 마우스 커서 mouse-cursor로 적용 */}
+                  <div className={`my-2 text-center ${slide.semester == '2024-2'?'mouse-cursor':''}`}>
                     <h1>{slide.semester}</h1>
                     <h2>{slide.name}</h2>
                   </div>
                   {/* <div className="md-[30vw] relative flex w-[40vw] flex-1 items-center justify-center align-middle xl:w-[20vw]"> */}
-                  <div className="relative aspect-[519/740] flex-1">
+                  
+                  {/* 2024-2의 경우에만 마우스 커서 mouse-cursor로 적용 */}
+                  <div className={`relative aspect-[519/740] flex-1 ${slide.semester == '2024-2'?'mouse-cursor':''}`}>
                     <Image
                       src={slide.url}
                       alt={slide.name}
@@ -307,7 +318,9 @@ export default function Main() {
                       blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mOUkBCrBwABXQDHIqKtmAAAAABJRU5ErkJggg=="
                     />
                   </div>
-                  <div className="mt-4 text-center">
+
+                  {/* 2024-2의 경우에만 마우스 커서 mouse-cursor로 적용 */}
+                  <div className={`mt-4 text-center ${slide.semester == '2024-2'?'mouse-cursor':''}`}>
                     <h4>{slide.date}</h4>
                   </div>
                   {renderSlideLink(slide.semester, slide.link)}
