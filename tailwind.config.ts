@@ -13,6 +13,10 @@ const config: Config = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+      cursor: {
+        default: "url('/assets/cursor/default.cur'), auto",
+        mouse: "url('/assets/cursor/mouse.cur'), auto",
+      }
     },
     fontFamily: {
       Pretendard: ["Pretendard"],

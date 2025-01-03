@@ -20,6 +20,7 @@ export const getSemesterName = (semester: CoursesKey) => {
 // SemesterName key should be the same as CoursesKey
 const SemesterName: Record<CoursesKey, string> = {
   entire: "전체 학기" as const,
+  "2024-2": "2024-2" as const, 
   "2024-1": "2024-1" as const,
   "2023-2": "2023-2" as const,
   "2023-1": "2023-1" as const,
@@ -32,6 +33,7 @@ export type CoursesKey = keyof CoursesType;
 // CoursesType: a type for 'courses'
 export type CoursesType = {
   entire: TrackType;
+  "2024-2": TrackType;
   "2024-1": TrackType;
   "2023-2": TrackType;
   "2023-1": TrackType;
@@ -105,6 +107,27 @@ export const courses: CoursesType = {
     project: [
       { name: "산학연구실습", courseId: 25 },
       { name: "창의연구실습", courseId: 26 },
+    ],
+  },
+  "2024-2": {
+    hci: [
+      { name: "HCI 이론 및 실습", courseId: 1 },
+      { name: "사용자중심디자인", courseId: 4 },
+    ],
+    mediaContents: [
+      { name: "디지털영상실습2", courseId: 8 },
+      { name: "사운드 인터랙션", courseId: 10 },
+      { name: "인터랙티브 스토리텔링", courseId: 12 },
+      { name: "시리어스 게임", courseId: 14 },
+      { name: "미래뉴스실습2", courseId: 28 },
+    ],
+    technology: [
+      { name: "정보문화기술입문", courseId: 18 },
+      { name: "정보구조", courseId: 19 },
+      { name: "인터랙티브 미디어", courseId: 22 },
+    ],
+    project: [
+      { name: "산학연구실습", courseId: 25 },
     ],
   },
   "2024-1": {
