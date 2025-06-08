@@ -55,12 +55,12 @@ export const designers = [
 export const developers = [
   {
     team: "개발팀",
-    isHead: true,
+    isHead: false,
     major: "자유전공학부",
     name: "주혜현",
     account: "@vermilion_sol",
     id: 6,
-    period: "2023-1 ~ XXXX-X",
+    period: "2023-1 ~ 2024-1",
   },
   {
     team: "개발팀",
@@ -69,7 +69,7 @@ export const developers = [
     name: "김민지",
     account: "@kiminji000",
     id: 7,
-    period: "2023-1 ~ XXXX-X",
+    period: "2023-1 ~ 2024-1",
   },
   {
     team: "개발팀",
@@ -78,7 +78,7 @@ export const developers = [
     name: "박준영",
     account: "@partlyjadedyouth",
     id: 8,
-    period: "2023-1 ~ XXXX-X",
+    period: "2023-1 ~ 2024-1",
   },
   {
     team: "개발팀",
@@ -87,28 +87,26 @@ export const developers = [
     name: "이서현",
     account: "@seohyun___lee",
     id: 6,
-    period: "2023-1 ~ XXXX-X",
+    period: "2023-1 ~ 2023-2",
   },
-  /*
   {
     team: "개발팀",
     isHead: false,
     major: "",
     name: "장준석",
-    account: "",
+    account: "newtonjjang@naver.com",
     id: 9,
-    period: "2023-2 ~ 2024-1",
+    period: "2024-1",
   },
   {
     team: "개발팀",
     isHead: false,
     major: "",
     name: "백창인",
-    account: "",
+    account: "@bbaekcloud",
     id: 10,
     period: "2024-1 ~ 2024-2",
   },
-  */
   {
     team: "개발팀",
     isHead: false,
