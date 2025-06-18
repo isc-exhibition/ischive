@@ -114,6 +114,6 @@ export const developers = [
     name: "지명금",
     account: "@bright_gold_j",
     id: 11,
-    period: "2024-2",
+    period: "2024-2 ~ 2025-1",
   },
 ];
