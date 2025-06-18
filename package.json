@@ -13,6 +13,7 @@
     "@heroicons/react": "^2.0.18",
     "embla-carousel-autoplay": "^8.0.0-rc15",
     "embla-carousel-react": "^8.0.0-rc15",
+    "googleapis": "^144.0.0",
     "heroicons": "^2.0.18",
     "next": "14.2.10",
     "react": "^18",
