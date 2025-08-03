@@ -46,6 +46,13 @@ export default function Main() {
 
   const slides = [
     {
+      semester: "2025-1",
+      name: "응급창작센터",
+      date: "2025.06.19(목) ~ 2025.06.20(금)",
+      link: "https://www.instagram.com/p/DKqptOly3aD/",
+      url: "/assets/img/poster/poster25_1.png",
+    },    
+    {
       semester: "2024-2",
       name: "디지털 흔적기관",
       date: "2024.12.19(목) ~ 2024.12.20(금)",

@@ -116,4 +116,13 @@ export const developers = [
     id: 11,
     period: "2024-2 ~ 2025-1",
   },
+  {
+    team: "개발팀",
+    isHead: false,
+    major: "식품동물생명공학부",
+    name: "박현서",
+    account: "@hnso000",
+    id: 12,
+    period: "2025-1",
+  },
 ];
