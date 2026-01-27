@@ -133,7 +133,7 @@ export const courses: CoursesType = {
       { name: "웹프로그래밍개론", courseId: 23},
     ],
     project: [
-      { name: "산학연구실습", courseId: 25 },
+      { name: "창의연구실습", courseId: 26 },
     ],
   },
 
