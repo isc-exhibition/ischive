@@ -125,4 +125,13 @@ export const developers = [
     id: 12,
     period: "2025-1",
   },
+  {
+    team: "개발팀",
+    isHead: false,
+    major: "전기정보공학부",
+    name: "권현준",
+    account: "@kyun.0221",
+    id: 13,
+    period: "2025-2",
+  },
 ];

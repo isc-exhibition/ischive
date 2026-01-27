@@ -46,6 +46,13 @@ export default function Main() {
 
   const slides = [
     {
+      semester: "2025-2",
+      name: "ISC PIZZA HOUSE",
+      date: "2025.12.18(목) ~ 2025.12.19(금)",
+      link: "https://www.instagram.com/p/DR--kgYkn5b/",
+      url: "/assets/img/poster/poster25_2.png",
+    },
+    {
       semester: "2025-1",
       name: "응급창작센터",
       date: "2025.06.19(목) ~ 2025.06.20(금)",
