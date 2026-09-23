@@ -134,4 +134,22 @@ export const developers = [
     id: 13,
     period: "2025-2",
   },
+  {
+    team: "개발팀",
+    isHead: false,
+    major: "자유전공학부",
+    name: "조수빈",
+    account: "@emptywatertank3",
+    id: 14,
+    period: "2026-1",
+  },
+  {
+    team: "개발팀",
+    isHead: false,
+    major: "산업공학과",
+    name: "김지형",
+    account: "@j1_minorrr",
+    id: 15,
+    period: "2026-1",
+  },
 ];

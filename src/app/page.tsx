@@ -46,6 +46,13 @@ export default function Main() {
 
   const slides = [
     {
+      semester: "2026-1",
+      name: "Treasure Hunt in ISCland ",
+      date: "2026.06.18(목) ~ 2026.06.19(금)",
+      link: "https://www.instagram.com/p/DZXRy9zEs6M/",
+      url: "/assets/img/poster/poster26_1.png",
+    },
+    {
       semester: "2025-2",
       name: "ISC PIZZA HOUSE",
       date: "2025.12.18(목) ~ 2025.12.19(금)",
